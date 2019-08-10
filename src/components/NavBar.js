@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { FiGlobe } from "react-icons/fi";
+import logo from '../logo.svg'
 import {capitalizeFirst} from '../utils/helperFunctions'
 
 import '../css/Styles.css'
@@ -11,19 +12,17 @@ export default class NavBar extends React.Component {
 		return (
 			<div className="NavBar">
 				<div className="NavBarRight">
-					<NavItem route='/home' routeName={'home'} />
+				<Logo route='/home' />
+					{/* <NavItem route='/home' routeName={<Logo />} /> */}
 				</div>
 				<div className="NavBarRight">
-					{this.props.routes.map(e=> <NavItem route={e} routeName={capitalizeFirst(e.replace('/', ''))} />)}
+					{this.props.routes.filter(e => e !== '/home').map(e=> <NavItem route={e} routeName={capitalizeFirst(e.replace('/', ''))} />)}
 				</div>
 			</div>
 			)
   }
 }
 
-const NavItem = (props) => {
-	console.log(props.route)
-	return props.route !== '/mapa' 
-? <h3><Link className="NavBarLinks" to={props.route}>{props.routeName}</Link></h3>
-: <h2><Link className="NavBarLinks" ><FiGlobe/></Link></h2>
-}
+const Logo = (props) => <Link className="NavBarLinks" to={props.route}>{<img className="LogoMenu" width="10%" src={logo} alt="" />}</Link>
+
+const NavItem = (props) => <h3><Link className="NavBarLinks" to={props.route}>{props.route !== '/mapa' ? props.routeName : <FiGlobe size='1.5em'/>}</Link></h3>

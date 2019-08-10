@@ -14,8 +14,9 @@
 }
 
 .NavBar {
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 2%;
+  padding-right: 5%;
+  padding-top: 4px;
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -26,7 +27,9 @@
 .NavBarLeft {
   flex: 1;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
 }
 
 .NavBarRight {
@@ -41,4 +44,8 @@
   text-decoration: none;
   font-size: 30;
   font-family: "NunitoExtraLight";
+}
+
+.LogoMenu {
+  margin-top: 10px;
 }
