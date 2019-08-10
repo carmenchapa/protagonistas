@@ -1,0 +1,14 @@
+.NavBar {
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+}
+
+.NavBarLinks {
+  color: white;
+  text-decoration: none;
+}
