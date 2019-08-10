@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "NunitoLight"; /*a name to be used later*/
+  src: url("../static/fonts/Nunito-Light.ttf"); /*URL to font*/
+}
+
+@font-face {
+  font-family: "NunitoExtraLight"; /*a name to be used later*/
+  src: url("../static/fonts/Nunito-ExtraLight.ttf"); /*URL to font*/
+}
+
+@font-face {
+  font-family: "NunitoSansBlack"; /*a name to be used later*/
+  src: url("../static/fonts/NunitoSans-Black.ttf"); /*URL to font*/
+}
+
 .NavBar {
   padding-left: 10%;
   padding-right: 10%;
@@ -8,7 +23,22 @@
   background-color: black;
 }
 
+.NavBarLeft {
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.NavBarRight {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .NavBarLinks {
   color: white;
   text-decoration: none;
+  font-size: 30;
+  font-family: "NunitoExtraLight";
 }
