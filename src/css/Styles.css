@@ -1,3 +1,4 @@
+/* Fonts */
 @font-face {
   font-family: "NunitoLight"; /*a name to be used later*/
   src: url("../static/fonts/Nunito-Light.ttf"); /*URL to font*/
@@ -13,14 +14,63 @@
   src: url("../static/fonts/NunitoSans-Black.ttf"); /*URL to font*/
 }
 
+/* Custom Properties */
+
+:root {
+  --smokeWhite: #f7f7f7;
+  --gold: #d8d5bd;
+  --aquamarine: #95dce1;
+  --pink: #ff8592;
+  --cyan: #73c0d3;
+  --green: #8ee095;
+}
+
+/* Document */
+
+html,
+body,
+#root,
+.AppContainer,
+.HomeContainer,
+.FullHeight {
+  height: 100%;
+  /* display: flex; */
+}
+
+body {
+  font-family: "NunitoExtraLight";
+}
+
+.NabBarAvoiding {
+  padding-top: 72px;
+}
+
+.FlexStyle {
+  display: flex;
+}
+
+/* Navigation */
+
 .NavBar {
   padding-left: 2%;
-  padding-right: 5%;
+  /* padding-right: 5%; */
   padding-top: 4px;
   display: flex;
   flex: 1;
   flex-direction: row;
   justify-content: space-between;
+  /* background-color: transparent; */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.NavHome {
+  background-color: transparent;
+}
+
+.NavProtas {
   background-color: black;
 }
 
@@ -30,6 +80,7 @@
   justify-content: center;
   align-items: center;
   align-self: center;
+  /* padding-left: 5%; */
 }
 
 .NavBarRight {
@@ -37,6 +88,7 @@
   flex: 1;
   flex-direction: row;
   justify-content: space-between;
+  padding-right: 5%;
 }
 
 .NavBarLinks {
@@ -46,6 +98,66 @@
   font-family: "NunitoExtraLight";
 }
 
+.ActiveNavBarLinks {
+  text-decoration: underline;
+  text-decoration-color: var(--pink);
+}
+
 .LogoMenu {
   margin-top: 10px;
+}
+
+/* Home */
+
+/* .HomeContainer {
+  display: flex;
+  flex: 1; */
+/* width: 100%;
+  background-image: url("../static/images/homeBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  position: fixed;
+} */
+
+.HomeBackground {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.1) 30%,
+      rgba(0, 0, 0, 0.1) 70%,
+      rgba(0, 0, 0, 0.95) 100%
+    ),
+    url("../static/images/homeBackground.jpg");
+
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  /* bottom: 0; */
+}
+
+.HomeTitle {
+  position: relative;
+  font-size: 3.6rem;
+  font-family: "NunitoSansBlack";
+  top: 45vh;
+  margin-left: 10vh;
+  color: var(--gold);
+}
+
+.Centred {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Protagonistas */
+
+.ProtagonistaName {
+  font-family: "NunitoSansBlack";
+  margin-block-end: 0.2em;
+}
+
+.ProtagonistaDescription {
+  margin-block-start: 0.2em;
 }

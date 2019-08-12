@@ -40,7 +40,7 @@ const Navigation = () => (
 const NavigationAuth = () => (
     <div style={styles.root} >
     <NavBar 
-    routes={[ROUTES.HOME, ROUTES.MOVIMIENTOS, ROUTES.PROTAGONISTAS, ROUTES.EJES, ROUTES.MAPA]} 
+    routes={[ROUTES.HOME, ROUTES.ABOUT, ROUTES.MOVIMIENTOS, ROUTES.PROTAGONISTAS, ROUTES.EJES, ROUTES.MAPA]} 
     // signOut={<SignOutButton/>}
 		/>
     </div>
