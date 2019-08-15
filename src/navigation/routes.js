@@ -7,3 +7,5 @@ export const MOVIMIENTOS = '/movimientos';
 export const EJES = '/ejes';
 export const PROTAGONISTAS = '/protagonistas';
 export const MAPA = '/mapa';
+export const PROTAGONISTA = '/protagonistas:id';
+export const MOVIMIENTO = '/movimiento:id';
