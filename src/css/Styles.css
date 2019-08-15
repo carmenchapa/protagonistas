@@ -62,6 +62,23 @@ body {
   align-items: center;
 }
 
+/* Texts */
+
+/* p,
+b,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--darkBlack);
+} */
+b {
+  font-weight: "black";
+}
+
 /* Navigation */
 
 .link {
@@ -178,10 +195,12 @@ body {
 .ProtagonistaName {
   font-family: "NunitoSansBlack";
   margin-block-end: 0.2em;
+  color: "var(--gold)";
 }
 
 .ProtagonistaDescription {
   margin-block-start: 0.2em;
+  color: "var(--gold)";
 }
 
 /* Protagonista Ficha */
