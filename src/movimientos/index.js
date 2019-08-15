@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 export default class Movimientos extends React.Component {
 	getWidth = () =>	3 * (window.innerWidth*0.28 + 40)
@@ -6,8 +7,8 @@ export default class Movimientos extends React.Component {
 		return (
 			<div className="AppContainer NabBarAvoiding">
 				<div style={{...gridStyle, maxWidth: `${this.getWidth()}px`}}>
-				{[1,2,3,4,5,6,7].map(e => 
-					<Movimiento width={'28vw'} height={'20vw'} name='Protagonista' src={require('../static/images/sebas.jpg')} 
+				{[1,2,3,4,5,6,7].map((e, i) => 
+					<Movimiento key={i} width={'28vw'} height={'20vw'} name='Protagonista' src={require('../static/images/sebas.jpg')} 
 					description='Some short description'/>
 				)}
 			</div>
@@ -41,9 +42,13 @@ const movimientoContainer = (width, height, src) => {
 
 
 const Movimiento = (props) =>
+<Link className="link"
+	to={{	pathname: `/protagonistas:id`}}
+	>
 		<div style={movimientoContainer(props.width, props.height, props.src)}>
 			<div style={{flexDirection: 'row', margin: 10, color: 'var(--gold)'}}>
 			<p className="ProtagonistaName">{props.name.toUpperCase()}</p>
 			<p className="ProtagonistaDescription">{props.description.toUpperCase()}</p>
 			</div>
 		</div>
+		</Link>

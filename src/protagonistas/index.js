@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+
 
 export default class Protagonistas extends React.Component {
 
@@ -8,8 +10,8 @@ export default class Protagonistas extends React.Component {
 		return (
 			<div className="AppContainer NabBarAvoiding" style={{alignContent: 'center'}}>
 					<div style={{...gridStyle, maxWidth: `${this.getWidth()}px`}}>
-					{[1,2,3,4,5,6,7].map(e => 
-						<Prota size={'20vw'} name='Protagonista' src={require('../static/images/sebas.jpg')} 
+					{[1,2,3,4,5,6,7].map((e, i) => 
+						<Prota key={i} size={'20vw'} name='Protagonista' src={require('../static/images/sebas.jpg')} 
 						description='Some short description'/>
 					)}
 				</div>
@@ -42,6 +44,9 @@ const gridStyle = {
 
 
 const Prota = (props) =>
+<Link className="link"
+	to={{	pathname: `/protagonistas:id`}}
+	>
 	<div style={{flexDirection: 'colum', margin: 20, alignSelf: 'flex-start'}}>
 		<div className="Centred" style={{width: props.size, height: props.size, overflow: 'hidden'}}>
 			<img src={props.src} width='100%' alt="" />
@@ -50,3 +55,4 @@ const Prota = (props) =>
 		<p className="ProtagonistaName">{props.name.toUpperCase()}</p>
 		<p className="ProtagonistaDescription">{props.description}</p>
 	</div>
+	</Link>
