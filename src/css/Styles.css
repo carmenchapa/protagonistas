@@ -23,9 +23,10 @@
   --pink: #ff8592;
   --cyan: #73c0d3;
   --green: #8ee095;
+  --darkBlack: #1e1e1e;
 }
 
-/* Document */
+/* Helpers */
 
 html,
 body,
@@ -43,13 +44,30 @@ body {
 
 .NabBarAvoiding {
   padding-top: 72px;
+  /* height: calc(100% - 72px); */
+}
+
+.NabBarAvoidingHeight {
+  /* margin-top: 72px; */
+  height: calc(100% - 72px);
 }
 
 .FlexStyle {
   display: flex;
 }
 
+.Centred {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Navigation */
+
+.link {
+  text-decoration: none;
+  color: var(--darkBlack);
+}
 
 .NavBar {
   padding-left: 2%;
@@ -71,7 +89,8 @@ body {
 }
 
 .NavProtas {
-  background-color: black;
+  /* background-color: transparent; */
+  background-color: var(--darkBlack);
 }
 
 .NavBarLeft {
@@ -101,6 +120,15 @@ body {
 .ActiveNavBarLinks {
   text-decoration: underline;
   text-decoration-color: var(--pink);
+}
+.ActiveNavBarLinks::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  color: var(--pink);
+  /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+  bottom: 4px;
 }
 
 .LogoMenu {
@@ -145,12 +173,6 @@ body {
   color: var(--gold);
 }
 
-.Centred {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 /* Protagonistas */
 
 .ProtagonistaName {
@@ -161,3 +183,35 @@ body {
 .ProtagonistaDescription {
   margin-block-start: 0.2em;
 }
+
+/* Protagonista Ficha */
+
+.Protagonista {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  background-color: var(--darkBlack);
+}
+
+.Name {
+  font-family: "NunitoSansBlack";
+  font-size: 3.3rem;
+  margin-block-end: 0;
+}
+
+.Mov {
+  font-family: "NunitoSansBlack";
+  font-size: 1.6rem;
+  margin-block-end: 0;
+}
+
+.Text {
+  font-size: 1.2rem;
+}
+
+/* .contain {
+  height: "calc(100% - 60)";
+  object-fit: scale-down;
+} */
