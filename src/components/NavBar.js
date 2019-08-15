@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {decorate, computed} from "mobx";
 import { observer } from "mobx-react"
 import { FiGlobe } from "react-icons/fi";
@@ -22,7 +22,7 @@ const NavBar = observer(class NavBar extends React.Component {
 					{/* <NavItem route='/home' routeName={<Logo />} /> */}
 				</div>
 				<div className="NavBarRight">
-					{this.props.routes.filter(e => e !== '/home').map(e=> <NavItem route={e} routeName={capitalizeFirst(e.replace('/', ''))} />)}
+					{this.props.routes.filter(e => e !== '/home').map((e, i) => <NavItem key={i} route={e} routeName={capitalizeFirst(e.replace('/', ''))} />)}
 				</div>
 			</div>
 			)
