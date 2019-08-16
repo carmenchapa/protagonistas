@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import protas from '../data/protagonistas'
 
 
 export default class Protagonistas extends React.Component {
@@ -10,9 +11,9 @@ export default class Protagonistas extends React.Component {
 		return (
 			<div className="AppContainer NabBarAvoiding" style={{alignContent: 'center'}}>
 					<div style={{...gridStyle, maxWidth: `${this.getWidth()}px`}}>
-					{[1,2,3,4,5,6,7].map((e, i) => 
-						<Prota key={i} size={'20vw'} name='Protagonista' src={require('../static/images/sebas.jpg')} 
-						description='Some short description'/>
+					{protas.map((e, i) => 
+						<Prota key={i} size={'20vw'} name={e.nombre} src={e.img} 
+						description={e.shortText}/>
 					)}
 				</div>
 			</div>
@@ -49,7 +50,7 @@ const Prota = (props) =>
 	>
 	<div style={{flexDirection: 'colum', margin: 20, alignSelf: 'flex-start'}}>
 		<div className="Centred" style={{width: props.size, height: props.size, overflow: 'hidden'}}>
-			<img src={props.src} width='100%' alt="" />
+			<img src={props.src} height='100%' width='100%' alt="" style={{objectFit:'cover'}}/>
 			
 		</div>
 		<p className="ProtagonistaName">{props.name.toUpperCase()}</p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import movimientos from '../data/movimientos'
 
 export default class Movimientos extends React.Component {
 	getWidth = () =>	3 * (window.innerWidth*0.28 + 40)
@@ -7,9 +8,9 @@ export default class Movimientos extends React.Component {
 		return (
 			<div className="AppContainer NabBarAvoiding">
 				<div style={{...gridStyle, maxWidth: `${this.getWidth()}px`}}>
-				{[1,2,3,4,5,6,7].map((e, i) => 
-					<Movimiento key={i} width={'28vw'} height={'20vw'} name='Protagonista' src={require('../static/images/sebas.jpg')} 
-					description='Some short description'/>
+				{movimientos.map((e, i) => 
+					<Movimiento key={i} width={'28vw'} height={'20vw'} name={e.nombre} src={e.img} 
+					description={e.shortText}/>
 				)}
 			</div>
 			</div>
@@ -34,7 +35,7 @@ const movimientoContainer = (width, height, src) => {
 		overflow: 'hidden',
 		backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6)60%, rgba(0, 0, 0, 0.95)100%),
 		url(${src})`,
-		backgroundSize: 'cover',
+		backgroundSize: 'contain',
 		margin: 20,
 		alignItems: 'flex-end'
 }
@@ -47,8 +48,8 @@ const Movimiento = (props) =>
 	>
 		<div style={movimientoContainer(props.width, props.height, props.src)}>
 			<div style={{flexDirection: 'row', margin: 10, color: 'var(--gold)'}}>
-			<p className="ProtagonistaName">{props.name.toUpperCase()}</p>
-			<p className="ProtagonistaDescription">{props.description.toUpperCase()}</p>
+			<p className="ProtagonistaName">{props.name.toString().toUpperCase()}</p>
+			<p className="ProtagonistaDescription" style={{color: 'OldLace'}}>{props.description.toString().toUpperCase()}</p>
 			</div>
 		</div>
 		</Link>
