@@ -9,7 +9,7 @@ export default class Protagonistas extends React.Component {
 
   render() {
 		return (
-			<div className="AppContainer NabBarAvoiding" style={{alignContent: 'center'}}>
+			<div className="AppContainer NabBarAvoiding ProtasContainer" style={{alignContent: 'center'}}>
 					<div style={{...gridStyle, maxWidth: `${this.getWidth()}px`}}>
 					{protas.map((e, i) => 
 						<Prota key={i} size={'20vw'} name={e.nombre} src={e.img} 
