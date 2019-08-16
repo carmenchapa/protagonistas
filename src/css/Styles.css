@@ -53,6 +53,7 @@ body {
 }
 
 .FlexStyle {
+  flex: 1;
   display: flex;
 }
 
@@ -60,6 +61,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.Row {
+  flex-direction: row;
 }
 
 /* Texts */
@@ -88,7 +93,6 @@ b {
 
 .NavBar {
   padding-left: 2%;
-  /* padding-right: 5%; */
   padding-top: 4px;
   display: flex;
   flex: 1;
@@ -103,6 +107,11 @@ b {
 
 .NavHome {
   background-color: transparent;
+}
+
+.NavBarIcon {
+  /* margin-left: 8px; */
+  padding-right: 8px;
 }
 
 .NavProtas {
@@ -121,7 +130,7 @@ b {
 
 .NavBarRight {
   display: flex;
-  flex: 1;
+  flex: 3 3;
   flex-direction: row;
   justify-content: space-between;
   padding-right: 5%;
@@ -129,32 +138,32 @@ b {
 
 .NavBarLinks {
   color: white;
-  /* color: var(--pink); */
-  text-decoration: none;
-  font-size: 30;
   font-family: "NunitoExtraLight";
+  text-decoration: none;
+  position: relative;
+  display: block;
+  padding: 5px 0;
+  font-size: 1.1rem;
+  transition: color 0.1s, background-color 0.1s;
 }
 
 .ActiveNavBarLinks {
   font-family: "NunitoLight";
-  /* border-bottom: 5px solid var(--pink); */
-  color: var(--pink);
+  border-bottom: 5px solid var(--pink);
+  /* color: var(--pink); */
 }
 
-.ActiveNavBarLinks:hover {
+.NavBarLinks:hover {
+  font-family: "NunitoLight";
   color: #fff;
 }
-.ActiveNavBarLinks:focus,
-.ActiveNavBarLinks:active {
-  color: var(--pink);
-}
 
-.ActiveNavBarLinks::before {
+.NavBarLinks::before {
   content: "";
   display: block;
   position: absolute;
   top: 100%;
-  height: 3px;
+  height: 5px;
   width: 100%;
   background-color: var(--pink);
   -webkit-transform-origin: center top;
@@ -167,13 +176,13 @@ b {
     -webkit-transform 0.2s ease-out;
 }
 
-.ActiveNavBarLinks:active::before {
+.NavBarLinks:active::before {
   font-family: "NunitoSansBlack";
-  background-color: var(--pink);
+  /* background-color: var(--pink); */
 }
 
-.ActiveNavBarLinks:hover::before,
-.ActiveNavBarLinks:focus::before {
+.NavBarLinks:hover::before,
+.NavBarLinks:focus::before {
   font-family: "NunitoSansBlack";
   -webkit-transform-origin: center top;
   transform-origin: center top;
@@ -225,13 +234,19 @@ b {
 
 /* Protagonistas */
 
+.ProtasContainer {
+  background-color: var(--darkBlack);
+}
+
 .ProtagonistaName {
   font-family: "NunitoSansBlack";
   margin-block-end: 0.2em;
+  color: var(--gold);
 }
 
 .ProtagonistaDescription {
   margin-block-start: 0.2em;
+  color: OldLace;
 }
 
 /* Protagonista Ficha */

@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import {decorate, computed} from "mobx";
 import { observer } from "mobx-react"
 import { FiGlobe } from "react-icons/fi";
+import {MdNaturePeople, MdZoomOutMap, MdPeople, MdMoreHoriz} from "react-icons/md";
 import logo from '../logo.svg'
 import {capitalizeFirst} from '../utils/helperFunctions'
 
@@ -29,9 +30,27 @@ const NavBar = observer(class NavBar extends React.Component {
   }
 })
 
-const Logo = (props) => <NavLink className="NavBarLinks" to={props.route}>{<img className="LogoMenu" width="10%" src={logo} alt="" />}</NavLink>
+const Logo = (props) => <NavLink to={props.route}>{<img className="LogoMenu" width="10%" src={logo} alt="" />}</NavLink>
 
-const NavItem = (props) => <h3><NavLink className="NavBarLinks" activeClassName="ActiveNavBarLinks" to={props.route}>{props.route !== '/mapa' ? props.routeName : <FiGlobe size='1.5em'/>}</NavLink></h3>
+const NavItem = (props) => <h3><NavLink className="NavBarLinks" activeClassName="ActiveNavBarLinks" to={props.route}>{props.route !== '/mapa' ? <IconLink name={props.routeName} />: <FiGlobe size='1.5em'/>}</NavLink></h3>
+
+const IconLink = (props) => {
+	console.log(props.name)
+	const extraProps = {className:"NavBarIcon", size:'1.2em'}
+return<div 
+style={{display: 'flex', alignItems: 'center'}}
+>
+{
+	props.name === 'Protagonistas' ?
+<MdPeople {...extraProps} />
+: props.name === 'Movimientos' ?
+<MdNaturePeople {...extraProps} />
+: props.name === 'Ejes' ?
+<MdZoomOutMap {...extraProps} />
+: <MdMoreHoriz {...extraProps} />
+}
+{props.name}</div>
+}
 
 decorate(NavBar, {
 	pathname: computed
