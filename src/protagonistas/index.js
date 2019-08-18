@@ -12,7 +12,7 @@ export default class Protagonistas extends React.Component {
 			<div className="AppContainer NabBarAvoiding ProtasContainer" style={{alignContent: 'center'}}>
 					<div style={{...gridStyle, maxWidth: `${this.getWidth()}px`}}>
 					{protas.map((e, i) => 
-						<Prota key={i} size={'20vw'} name={e.nombre} src={e.img} 
+						<Prota key={i} size={'20vw'} name={e.name} src={e.img} 
 						description={e.shortText}/>
 					)}
 				</div>
@@ -46,7 +46,10 @@ const gridStyle = {
 
 const Prota = (props) =>
 <Link className="link"
-	to={{	pathname: `/protagonistas:id`}}
+	to={{
+		pathname: `/protagonistas:${props.name}`,
+		protagonista: props.name
+	}}
 	>
 	<div style={{flexDirection: 'colum', margin: 20, alignSelf: 'flex-start'}}>
 		<div className="Centred" style={{width: props.size, height: props.size, overflow: 'hidden'}}>
