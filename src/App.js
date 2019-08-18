@@ -17,13 +17,12 @@ function App() {
     <div className="AppContainer">
       <Navigation currentRoute={pathname}/>
       <div className="AppContainer">
-      <Route path={ROUTES.HOME} component={Home} />
-      <Route path={ROUTES.MOVIMIENTOS} component={Movimientos} />
-      <Route path={ROUTES.PROTAGONISTAS} component={Protagonistas} />
-			<Route path={ROUTES.EJES} component={Ejes} />
-			<Route path={ROUTES.MAPA} component={Mapa} />
-			{/* <Route path={ROUTES.MOVIMIENTO} component={Protagonista} /> */}
-			<Route path={ROUTES.PROTAGONISTA} component={Protagonista} />
+				<Route exact path={ROUTES.HOME[0]} component={Home} />
+	      <Route path={ROUTES.MOVIMIENTOS[0]} component={Movimientos} />
+	      <Route path={ROUTES.PROTAGONISTAS[0]} component={Protagonistas} />
+				<Route path={ROUTES.EJES[0]} component={Ejes} />
+				<Route path={ROUTES.MAPA[0]} component={Mapa} />
+				<Route path={ROUTES.PROTAGONISTA[0]} component={Protagonista} />
 
       {/* <Route path="/proposals:id" component={DecisionPage} /> */}
       </div>

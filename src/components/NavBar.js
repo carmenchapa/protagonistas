@@ -17,13 +17,12 @@ const NavBar = observer(class NavBar extends React.Component {
 		
 		const {pathname} = window.location
 		return (
-			<div className={`NavBar ${pathname === '/home' ? "NavProtas" : "NavProtas"}`}>
+			<div className={`NavBar ${pathname === '/' ? "NavProtas" : "NavProtas"}`}>
 				<div className="NavBarRight">
-				<Logo route='/home' />
-					{/* <NavItem route='/home' routeName={<Logo />} /> */}
+				<Logo route='/' to='/' />
 				</div>
 				<div className="NavBarRight">
-					{this.props.routes.filter(e => e !== '/home').map((e, i) => <NavItem key={i} route={e} routeName={capitalizeFirst(e.replace('/', ''))} />)}
+					{this.props.routes.filter(e => e[1] !== 'HOME').map((e, i) => <NavItem key={i} route={e[0]} routeName={capitalizeFirst(e[1].replace('/', ''))} />)}
 				</div>
 			</div>
 			)

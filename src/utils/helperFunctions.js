@@ -1,3 +1,4 @@
 export function capitalizeFirst(value: string) {
-  return value.charAt(0).toUpperCase() + value.slice(1)
+	const newValue = value.toLowerCase()
+  return newValue.charAt(0).toUpperCase() + newValue.slice(1)
 }
