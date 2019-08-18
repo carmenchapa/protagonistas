@@ -149,7 +149,7 @@ b {
 
 .ActiveNavBarLinks {
   font-family: "NunitoLight";
-  border-bottom: 5px solid var(--pink);
+  /* border-bottom: 5px solid var(--pink); */
   /* color: var(--pink); */
 }
 
