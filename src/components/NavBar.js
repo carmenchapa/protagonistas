@@ -1,7 +1,5 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
-import {decorate, computed} from "mobx";
-import { observer } from "mobx-react"
 import { FiGlobe } from "react-icons/fi";
 import {MdNaturePeople, MdZoomOutMap, MdPeople, MdMoreHoriz} from "react-icons/md";
 import logo from '../logo.svg'
@@ -10,7 +8,7 @@ import {capitalizeFirst} from '../utils/helperFunctions'
 import '../css/Styles.css'
 
 // @observer
-const NavBar = observer(class NavBar extends React.Component {
+const NavBar = class NavBar extends React.Component {
   render() {
 		console.log('NavBar', window.location.pathname)
 		// console.log('current', this.props)
@@ -27,7 +25,7 @@ const NavBar = observer(class NavBar extends React.Component {
 			</div>
 			)
   }
-})
+}
 
 const Logo = (props) => <NavLink to={props.route}>{<img className="LogoMenu" width="10%" src={logo} alt="" />}</NavLink>
 
@@ -51,7 +49,4 @@ style={{display: 'flex', alignItems: 'center'}}
 {props.name}</div>
 }
 
-decorate(NavBar, {
-	pathname: computed
-});
 export default NavBar
