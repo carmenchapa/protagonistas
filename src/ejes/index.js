@@ -1,12 +1,12 @@
 import React from 'react';
-import data from '../data/generalTexts'
+// import data from '../data/generalTexts'
 
 export default class Ejes extends React.Component {
   render() {
 		return (
 			<div className="AppContainer NabBarAvoiding">
 				<div className="FullHeight FlexStyle" style={containerStyle}>
-					<p>{data.ejes}</p>
+					{/* <p>{data.ejes}</p> */}
 					<div className="FlexStyle Row">
 						<div className="FlexStyle" style={cyan}></div>
 						<div className="FlexStyle" style={pink}></div>
@@ -38,7 +38,7 @@ const green = {
 const containerStyle = {
 	display: 'flex',
 	flexDirection: 'column',
-	marginLeft: '20vw',
-	marginRight: '20vw',
+	marginLeft: '18vw',
+	marginRight: '18vw',
 	fontSize: '1.4rem'
 }
