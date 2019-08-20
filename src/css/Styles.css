@@ -274,9 +274,17 @@ b {
 
 .Text {
   font-size: 1.2rem;
+  margin-block-start: 0.5em;
 }
 
 /* .contain {
   height: "calc(100% - 60)";
   object-fit: scale-down;
 } */
+
+.PopupName {
+  font-family: "NunitoSansBlack";
+  font-size: 1.3rem;
+  margin-block-start: 0.5em;
+  margin-block-end: 0;
+}
