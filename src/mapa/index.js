@@ -1,5 +1,6 @@
 import React from "react"
 import {Map, GoogleApiWrapper, Marker} from "google-maps-react"
+import { Link } from "react-router-dom";
 import protas from "../data/protagonistas"
 import {capitalizeFirst} from "../utils/helperFunctions"
 
@@ -43,6 +44,12 @@ class Mapa extends React.Component {
 }
 
 const PopUp = props => (
+	<Link className="link"
+	to={{
+		pathname: `/protagonistas:${props.prota.name}`,
+		protagonista: props.prota.name
+	}}
+	>
   <div style={popupStyles}>
     <img
       src={props.prota.img}
@@ -56,6 +63,7 @@ const PopUp = props => (
       <p className="Text">{props.prota.shortText}</p>
     </div>
   </div>
+	</Link>
 )
 
 const mapStyles = {
