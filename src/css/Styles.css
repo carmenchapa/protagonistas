@@ -69,17 +69,6 @@ body {
 
 /* Texts */
 
-/* p,
-b,
-span,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--darkBlack);
-} */
 b {
   font-weight: "black";
 }
@@ -258,6 +247,27 @@ b {
   flex-direction: row;
   color: white;
   background-color: var(--darkBlack);
+}
+
+.ProtaFichaContainer {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 80px;
+  padding-right: calc(60px + 5vw);
+  padding-left: calc(60px + 5vw);
+}
+
+.ProtaImageContainer {
+  justify-content: flex-end;
+  padding: 30px;
+  padding-top: calc(72px + 30px);
+}
+
+.ProtaImage {
+  height: calc(100vh - 60px - 72px);
+  width: calc(60vh - 60px);
+  object-fit: cover;
 }
 
 .Name {
