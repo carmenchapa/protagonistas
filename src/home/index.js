@@ -32,7 +32,7 @@ export default class Home extends React.Component {
           </div>
         </div>
         <div className="FullHeight FlexStyle" style={thirdContainerStyle}>
-          <p>{newText(data.introProtas)}</p>
+          {newText(data.introProtas)}
         </div>
       </div>
     );
@@ -53,9 +53,9 @@ const secondContainerStyle = {
 };
 
 const thirdContainerStyle = {
-  marginLeft: "20vw",
-  marginRight: "20vw",
-  fontSize: "1.4rem"
+  marginLeft: "25vw",
+  marginRight: "25vw",
+  fontSize: "1.5rem"
 };
 
 const Square = props => (

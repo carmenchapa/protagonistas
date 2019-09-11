@@ -67,6 +67,28 @@ body {
   flex-direction: row;
 }
 
+.Column {
+  flex-direction: column;
+}
+
+/* General Styles */
+
+.DarkContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: white;
+  background-color: var(--darkBlack);
+}
+
+.WhiteContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: var(--darkBlack);
+  background-color: white;
+}
+
 /* Texts */
 
 b {
@@ -132,7 +154,7 @@ b {
   position: relative;
   display: block;
   padding: 5px 0;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   transition: color 0.1s, background-color 0.1s;
 }
 
@@ -221,6 +243,10 @@ b {
   color: var(--gold);
 }
 
+.ListContainer {
+  padding-top: 15vh;
+}
+
 /* Protagonistas */
 
 .ProtasContainer {
@@ -239,15 +265,6 @@ b {
 }
 
 /* Protagonista Ficha */
-
-.Protagonista {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  color: white;
-  background-color: var(--darkBlack);
-}
 
 .ProtaFichaContainer {
   flex-direction: column;
@@ -285,6 +302,7 @@ b {
 .Text {
   font-size: 1.2rem;
   margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
 }
 
 /* .contain {
@@ -297,4 +315,54 @@ b {
   font-size: 1.3rem;
   margin-block-start: 0.5em;
   margin-block-end: 0;
+}
+
+/* Movimiento Ficha */
+
+.Movimiento {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  color: var(--darkBlack);
+  /* background-color: var(--darkBlack); */
+}
+
+.MovimientoFichaContainer {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 80px;
+  padding-right: calc(60px + 2vw);
+  padding-left: calc(40px + 1vw);
+}
+
+.MovimientoImageContainer {
+  justify-content: flex-end;
+  padding: 60px;
+  padding-top: calc(72px + 30px);
+}
+
+.MovimientoImage {
+  height: calc(80vh - 60px - 72px);
+  width: calc(100vh - 60px);
+  object-fit: cover;
+}
+
+.MovButton {
+  background-color: var(--cyan);
+  font-family: "NunitoSansBlack";
+  height: 40px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  color: #fff;
+  border-width: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 1.5rem;
+}
+
+.TabBarItem {
+  font-family: "NunitoSansBlack";
+  font-weight: bold;
 }
