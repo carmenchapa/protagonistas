@@ -1,6 +1,6 @@
 const movimientos = [
   {
-    nombre: "comuna13",
+    name: "comuna13",
     protagonistas: ["perro", "aka", "martika", "cremas"],
     shortText: "Medellín, Colombia",
     text: `La comuna 13 ha sido reconocida internacionalmente como un referente de urbanismo social en pro de la transformación y la revitalización de la comunidad.  Se han gestado un sinnúmero de iniciativas que buscan evidenciar esas ganas de luchar contra la violencia que tanto los ha golpeado por años.

@@ -5,15 +5,16 @@ import movimientos from "../data/movimientos";
 export default class Movimientos extends React.Component {
   getWidth = () => 3 * (window.innerWidth * 0.28 + 40);
   render() {
+    console.log("mov name", movimientos);
     return (
-      <div className="AppContainer NabBarAvoiding">
+      <div className="AppContainer NabBarAvoiding ListContainer">
         <div style={{ ...gridStyle, maxWidth: `${this.getWidth()}px` }}>
           {movimientos.map((e, i) => (
             <Movimiento
               key={i}
               width={"28vw"}
               height={"20vw"}
-              name={e.nombre}
+              name={e.name}
               src={e.img}
               description={e.shortText}
             />
@@ -47,17 +48,23 @@ const movimientoContainer = (width, height, src) => {
   };
 };
 
-const Movimiento = props => (
-  <Link className="link" to={{ pathname: `/protagonistas:id` }}>
-    <div style={movimientoContainer(props.width, props.height, props.src)}>
-      <div style={{ flexDirection: "row", margin: 10, color: "var(--gold)" }}>
-        <p className="ProtagonistaName">
-          {props.name.toString().toUpperCase()}
-        </p>
-        <p className="ProtagonistaDescription" style={{ color: "OldLace" }}>
-          {props.description.toString().toUpperCase()}
-        </p>
+const Movimiento = props => {
+  console.log("mov", props.name);
+  return (
+    <Link
+      className="link"
+      to={{ pathname: `/movimientos:${props.name}`, movimiento: props.name }}
+    >
+      <div style={movimientoContainer(props.width, props.height, props.src)}>
+        <div style={{ flexDirection: "row", margin: 10, color: "var(--gold)" }}>
+          <p className="ProtagonistaName">
+            {props.name.toString().toUpperCase()}
+          </p>
+          <p className="ProtagonistaDescription" style={{ color: "OldLace" }}>
+            {props.description.toString().toUpperCase()}
+          </p>
+        </div>
       </div>
-    </div>
-  </Link>
-);
+    </Link>
+  );
+};
