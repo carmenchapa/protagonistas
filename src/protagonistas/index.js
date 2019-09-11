@@ -8,7 +8,7 @@ export default class Protagonistas extends React.Component {
   render() {
     return (
       <div
-        className="AppContainer NabBarAvoiding ProtasContainer"
+        className="AppContainer NabBarAvoiding ProtasContainer ListContainer"
         style={{ alignContent: "center" }}
       >
         <div style={{ ...gridStyle, maxWidth: `${this.getWidth()}px` }}>
