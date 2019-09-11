@@ -1,4 +1,5 @@
-/* Fonts */
+/* ------* FONTS *------ */
+
 @font-face {
   font-family: "NunitoLight"; /*a name to be used later*/
   src: url("../static/fonts/Nunito-Light.ttf"); /*URL to font*/
@@ -14,7 +15,7 @@
   src: url("../static/fonts/NunitoSans-Black.ttf"); /*URL to font*/
 }
 
-/* Custom Properties */
+/* ------* CUSTOM PROPERTIES *------ */
 
 :root {
   --smokeWhite: #f7f7f7;
@@ -26,7 +27,7 @@
   --darkBlack: #1e1e1e;
 }
 
-/* Helpers */
+/* ------* HELPERS *------ */
 
 html,
 body,
@@ -64,14 +65,22 @@ body {
 }
 
 .Row {
+  display: flex;
   flex-direction: row;
 }
 
 .Column {
+  display: flex;
   flex-direction: column;
 }
 
-/* General Styles */
+/* ------* TEXTS *------ */
+
+b {
+  font-weight: "black";
+}
+
+/* ------* GENERAL STYLES *------ */
 
 .DarkContainer {
   width: 100%;
@@ -89,13 +98,13 @@ body {
   background-color: white;
 }
 
-/* Texts */
-
-b {
-  font-weight: "black";
+.cover {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
-/* Navigation */
+/* ------* NAVIGATION *------ */
 
 .link {
   text-decoration: none;
@@ -205,7 +214,7 @@ b {
   margin-top: 10px;
 }
 
-/* Home */
+/* ------* HOME *------ */
 
 /* .HomeContainer {
   display: flex;
@@ -247,7 +256,7 @@ b {
   padding-top: 15vh;
 }
 
-/* Protagonistas */
+/* ------* PROTAGONISTAS *------ */
 
 .ProtasContainer {
   background-color: var(--darkBlack);
@@ -264,15 +273,15 @@ b {
   color: OldLace;
 }
 
-/* Protagonista Ficha */
+/* ------* PROTAGONISTA FICHA *------ */
 
 .ProtaFichaContainer {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 80px;
-  padding-right: calc(60px + 5vw);
-  padding-left: calc(60px + 5vw);
+  padding-right: calc(60px + 4vw);
+  padding-left: calc(60px + 4vw);
 }
 
 .ProtaImageContainer {
@@ -289,7 +298,7 @@ b {
 
 .Name {
   font-family: "NunitoSansBlack";
-  font-size: 3.3rem;
+  font-size: 3.3vw;
   margin-block-end: 0;
 }
 
@@ -300,7 +309,7 @@ b {
 }
 
 .Text {
-  font-size: 1.2rem;
+  font-size: 1.4vw;
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
 }
@@ -317,7 +326,7 @@ b {
   margin-block-end: 0;
 }
 
-/* Movimiento Ficha */
+/* ------* MOVIMIENTO FICHA *------ */
 
 .Movimiento {
   width: 100%;
