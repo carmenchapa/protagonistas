@@ -125,6 +125,11 @@ b {
   z-index: 1000;
 }
 
+.NavBarMobile {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .NavHome {
   background-color: transparent;
 }
@@ -150,7 +155,7 @@ b {
 
 .NavBarRight {
   display: flex;
-  flex: 3 3;
+  flex: 1;
   flex-direction: row;
   justify-content: space-between;
   padding-right: 5%;
@@ -208,6 +213,17 @@ b {
   transform-origin: center top;
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
+}
+
+.MobileMenuOpen {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--gold);
 }
 
 .LogoMenu {
@@ -280,8 +296,16 @@ b {
   align-items: flex-start;
   justify-content: flex-start;
   padding: 80px;
-  padding-right: calc(60px + 4vw);
-  padding-left: calc(60px + 4vw);
+  padding-right: calc(30px + 2vw);
+  padding-left: calc(30px + 2vw);
+  @media screen and (min-width: 700px) {
+    padding-right: calc(40px + 3vw);
+    padding-left: calc(40px + 3vw);
+  }
+  @media screen and (min-width: 1300px) {
+    padding-right: calc(60px + 4vw);
+    padding-left: calc(60px + 4vw);
+  }
 }
 
 .ProtaImageContainer {
@@ -309,9 +333,15 @@ b {
 }
 
 .Text {
-  font-size: 1.4vw;
+  font-size: 1.7vw;
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
+  @media screen and (min-width: 700px) {
+    font-size: 1.6vw;
+  }
+  @media screen and (min-width: 1300px) {
+    font-size: 1.3vw;
+  }
 }
 
 /* .contain {
