@@ -40,8 +40,7 @@ const protas = [
     text: `25 años apenas y, sin embargo, muchos de ellos como emprendedor. Desde niño está trabajando, inventando.
       El negocio de helados familiar, dicen, fue el primero que visitó un turista en la comuna 13. Lo que sí es un hecho es que es el que da la bienvenida a los recorridos turísticos de las escaleras mecánicas.
       Doña Consuelo es el nombre, en honor a la abuela, la de la receta: son helados de fruta natural.
-      Como es familiar, ahí está el padre, don Jaime, el que atiende. Y el abuelo, el que compra la fruta.
-      Sebastián se mueve de aquí para allá. Es el administrador detrás de todo, y quien resalta el valor de la terquedad.`,
+      Como es familiar, ahí está el padre, don Jaime, el que atiende. Y el abuelo, el que compra la fruta. Sebastián se mueve de aquí para allá. Es el administrador detrás de todo, y quien resalta el valor de la terquedad.`,
     img: require("../static/images/protagonistas/cremas.jpg"),
     geo: { latitude: 6.555369, longitude: -75.122766 }
   }
