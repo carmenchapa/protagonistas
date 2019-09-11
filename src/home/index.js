@@ -2,6 +2,7 @@ import React from "react";
 import "../static/images/map.png";
 import data from "../data/generalTexts";
 import { newText } from "../utils/helperFunctions";
+import { Square, Rectangle } from "../components/CommonComponents";
 
 export default class Home extends React.Component {
   render() {
@@ -57,31 +58,3 @@ const thirdContainerStyle = {
   marginRight: "25vw",
   fontSize: "1.5rem"
 };
-
-const Square = props => (
-  <div
-    className="Centred"
-    style={{
-      backgroundColor: props.color,
-      width: props.size,
-      height: props.size,
-      padding: 40
-    }}
-  >
-    <p style={{ fontSize: props.fontSize }}>{props.text}</p>
-  </div>
-);
-
-const Rectangle = props => (
-  <div
-    className="Centred"
-    style={{
-      backgroundColor: props.color,
-      width: props.width,
-      height: props.height,
-      alignItems: "flex-end"
-    }}
-  >
-    <img src={props.src} width={"100%"} height={"100%"} alt="" />
-  </div>
-);
