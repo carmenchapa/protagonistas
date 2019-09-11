@@ -1,7 +1,7 @@
 const protas = [
   {
     name: "perro",
-    movimiento: "comuna 13",
+    movimiento: "comuna13",
     shortText: "Artista de Medellín. Graffiti - Arte urbano",
     text: `También conocido, aunque menos, como Daniel Felipe Quiceno. Es artista, es grafitero. Tiene 29 años.
     El Perro quería ser uno de los mejores grafiteros de Medellín y ahí está: es uno de los fundadores del grafitour de la C13.
@@ -9,11 +9,12 @@ const protas = [
     “Turismo comunitario” es como define el movimiento alrededor de la apropiación de color en las paredes del barrio. Al grafitour, mal contadas, asisten dos mil personas por día.
     Y está orgulloso de lo que hace. Vive del arte hace 10 años.`,
     img: require("../static/images/protagonistas/perro.jpg"),
+    socialImg: require("../static/images/protagonistas/perro.jpg"),
     geo: { latitude: 6.255369, longitude: -75.622766 }
   },
   {
     name: "aka",
-    movimiento: "comuna 13",
+    movimiento: "comuna13",
     shortText: "Sembrador y músico de Medellín",
     text: `Un sembrador, eso es el Aka. De procesos, de semillas, de preguntas.
       Este joven activista entiende la agricultura como un todo, un punto cero adonde todo regresa. Por eso un día está plantando con comunidades o en ejercicios de memoria colectiva, siempre desde el territorio.
@@ -23,7 +24,7 @@ const protas = [
   },
   {
     name: "martika",
-    movimiento: "comuna 13",
+    movimiento: "comuna13",
     shortText: "Educadora social de Medellín",
     text: `Marta, Martica o Lulú: la misma persona hiperactiva y entregada a labores sociales que desde hace 10 años coordina la fundación Culturizzarte en Belencito, en Medellín. Un proyecto para encausar jóvenes en condición de vulnerabilidad desde el arte y la cultura.
       Martica está en lo social desde niña. ¨No pasar por pasar¨ es algo así como su mantra.
@@ -34,7 +35,7 @@ const protas = [
   },
   {
     name: "sebastián",
-    movimiento: "comuna 13",
+    movimiento: "comuna13",
     shortText: "Emprendedor de Medellín",
     text: `25 años apenas y, sin embargo, muchos de ellos como emprendedor. Desde niño está trabajando, inventando.
       El negocio de helados familiar, dicen, fue el primero que visitó un turista en la comuna 13. Lo que sí es un hecho es que es el que da la bienvenida a los recorridos turísticos de las escaleras mecánicas.
