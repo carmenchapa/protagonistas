@@ -16,17 +16,21 @@ export default class Protagonista extends React.Component {
     const name = this.props.match.params.id.replace(":", "");
     const protagonista = protas.find(item => item.name === name);
     console.log(" mov", protagonista.movimiento);
+
+    // const styles = {showSidebar: windowWidth > 768}
     return (
       <div className="AppContainer" style={{ alignContent: "center" }}>
         <div className="DarkContainer NabBarAvoidingHeight Row">
-          <div className="ProtaFichaContainer">
+          <div className="ProtaFichaContainer" style={{ paddingBottom: "7vw" }}>
+            {/* <div className="Centred Column"> */}
             <p className="Name">{name.toUpperCase()}</p>
             {/* <p className="Mov">{`MOV: ${protagonista.movimiento.toUpperCase()}`}</p> */}
             {newText(protagonista.text)}
+            {/* </div> */}
             <div className="Centred">
               {/* <MovButton mov={protagonista.movimiento.toUpperCase()} /> */}
               <h1>
-                <MdPlayCircleFilled size="4em" color={pink} />
+                <MdPlayCircleFilled size="8vw" color={pink} />
               </h1>
             </div>
           </div>
@@ -44,7 +48,7 @@ export default class Protagonista extends React.Component {
                 width: "calc(100vw - 60vh - 30px)",
                 justifyContent: "center",
                 alignItems: "center",
-                marginTop: "-8vw"
+                marginTop: "-7vw"
               }}
             >
               <div
@@ -63,18 +67,18 @@ export default class Protagonista extends React.Component {
                   }}
                 >
                   <Square
-                    text="Comuna 13. El movimiento"
+                    text={`Comuna 13.\nEl movimiento`}
                     color={constants.CYAN}
                     size={"20vw"}
-                    fontSize={20}
+                    fontSize={"20vw"}
                     style={{ marginRight: 25 }}
                   />
                 </Link>
                 <Square
-                  text="Comuna 13. El movimiento"
+                  text={`Comuna 13.\nEl movimiento`}
                   color="#fff"
                   size={"20vw"}
-                  fontSize={20}
+                  fontSize={"20vw"}
                   style={{ marginLeft: 25 }}
                 />
               </div>
@@ -96,7 +100,6 @@ export default class Protagonista extends React.Component {
               style={{
                 display: "flex",
                 flex: 1,
-                // justifyContent: "center",
                 alignItems: "flex-end"
               }}
             >

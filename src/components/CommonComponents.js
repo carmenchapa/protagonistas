@@ -1,4 +1,5 @@
 import React from "react";
+import { newText } from "../utils/helperFunctions";
 
 export const Square = props => (
   <div
@@ -11,8 +12,9 @@ export const Square = props => (
     }}
   >
     {props.text && (
-      <div style={{ padding: 40 }}>
-        <p style={{ fontSize: props.fontSize }}>{props.text}</p>
+      <div style={{ padding: 40, fontSize: props.fontSize }}>
+        {/* <p style={{ fontSize: props.fontSize }}>{props.text}</p> */}
+        {newText(props.text)}
       </div>
     )}
     {props.src && <img className="cover" src={props.src} alt="" />}

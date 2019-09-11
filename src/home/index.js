@@ -28,7 +28,7 @@ export default class Home extends React.Component {
             <Rectangle
               src={require("../static/images/map.png")}
               width={"55vh"}
-              height={"40vh"}
+              height={"35vh"}
             />
           </div>
         </div>
@@ -56,5 +56,6 @@ const secondContainerStyle = {
 const thirdContainerStyle = {
   marginLeft: "25vw",
   marginRight: "25vw",
-  fontSize: "1.5rem"
+  fontSize: "1.2vw"
+  // fontSize: "calc(1.2vw+4px)"
 };
