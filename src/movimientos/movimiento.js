@@ -15,7 +15,14 @@ export default class Movimiento extends React.Component {
     console.log("name", name, movimiento);
     return (
       <div className="AppContainer" style={{ alignContent: "center" }}>
-        <div className="Movimiento NabBarAvoidingHeight">
+        <div
+          className="Movimiento NabBarAvoidingHeight"
+          style={{
+            backgroundImage: `url(${movimiento.img})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "right 35%"
+          }}
+        >
           <div className="MovimientoFichaContainer">
             <p className="Name">{name.toUpperCase()}</p>
             {/* <p className="Mov">{`MOV: ${movimientos.movimiento.toUpperCase()}`}</p> */}
@@ -27,11 +34,11 @@ export default class Movimiento extends React.Component {
             </div>
           </div>
           <div className="Centred MovimientoImageContainer">
-            <img
+            {/* <img
               className="Centred MovimientoImage"
               src={movimiento.img}
               alt=""
-            />
+            /> */}
           </div>
         </div>
       </div>
