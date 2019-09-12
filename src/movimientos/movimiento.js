@@ -20,7 +20,7 @@ export default class Movimiento extends React.Component {
           style={{
             backgroundImage: `url(${movimiento.img})`,
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "right 35%"
+            backgroundPosition: "right bottom"
           }}
         >
           <div className="MovimientoFichaContainer">
