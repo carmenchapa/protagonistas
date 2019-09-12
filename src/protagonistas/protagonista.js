@@ -45,7 +45,7 @@ export default class Protagonista extends React.Component {
             <div
               className="Column"
               style={{
-                width: "calc(100vw - 60vh - 30px)",
+                width: "calc(100vw - 60vh)",
                 justifyContent: "center",
                 alignItems: "center",
                 marginTop: "-7vw"
@@ -54,9 +54,9 @@ export default class Protagonista extends React.Component {
               <div
                 className="Row"
                 style={{
-                  width: "calc(100vw - 60vh - 30px)",
+                  width: "calc(100vw - 60vh)",
                   justifyContent: "center",
-                  paddingBottom: 50
+                  paddingBottom: "4vw"
                 }}
               >
                 <Link
@@ -71,7 +71,7 @@ export default class Protagonista extends React.Component {
                     color={constants.CYAN}
                     size={"20vw"}
                     fontSize={"20vw"}
-                    style={{ marginRight: 25 }}
+                    style={{ marginRight: "2vw" }}
                   />
                 </Link>
                 <Square
@@ -79,12 +79,12 @@ export default class Protagonista extends React.Component {
                   color="#fff"
                   size={"20vw"}
                   fontSize={"20vw"}
-                  style={{ marginLeft: 25 }}
+                  style={{ marginLeft: "2vw" }}
                 />
               </div>
 
               <Rectangle
-                width={"calc(20*2vw + 25*2px)"}
+                width={"calc((20 + 2)*2vw)"}
                 height={"20vw"}
                 color={constants.GOLD}
               />
@@ -109,6 +109,7 @@ export default class Protagonista extends React.Component {
                 color={constants.CYAN}
                 size={"25vw"}
                 fontSize={20}
+                // style={{ marginLeft: 30 }}
               />
             </div>
           </div>
