@@ -29,7 +29,8 @@ export const Rectangle = props => (
       width: props.width,
       height: props.height,
       alignItems: "flex-end",
-      border: "none"
+      border: "none",
+      ...props.style
     }}
   >
     {props.src && <img className="cover" src={props.src} alt="" />}
