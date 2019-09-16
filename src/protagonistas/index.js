@@ -11,11 +11,11 @@ export default class Protagonistas extends React.Component {
         className="AppContainer NabBarAvoiding ProtasContainer ListContainer"
         style={{ alignContent: "center" }}
       >
-        <div style={{ ...gridStyle, maxWidth: `${this.getWidth()}px` }}>
+        <div className="grid">
           {protas.map((e, i) => (
             <Prota
+              className="gridElement"
               key={i}
-              size={"20vw"}
               name={e.name}
               src={e.img}
               description={e.shortText}
@@ -27,23 +27,6 @@ export default class Protagonistas extends React.Component {
   }
 }
 
-const gridStyle = {
-  display: "flex",
-  whiteSpace: "nowrap",
-  margin: "0 auto",
-  flexDirection: "row",
-  justifyContent: "flex-start",
-  flexWrap: "wrap"
-};
-
-// var d= $('div');
-// var w;
-
-// d.children().each(function(){
-//  w = w + $(this).outerWidth();
-//  d.css('width', w + 'px')
-// });
-
 const Prota = props => (
   <Link
     className="link"
@@ -52,12 +35,14 @@ const Prota = props => (
       protagonista: props.name
     }}
   >
-    <div
-      style={{ flexDirection: "colum", margin: 20, alignSelf: "flex-start" }}
-    >
+    <div style={{ flexDirection: "colum", alignSelf: "flex-start" }}>
       <div
         className="Centred"
-        style={{ width: props.size, height: props.size, overflow: "hidden" }}
+        style={{
+          width: "100%",
+          height: 300,
+          overflow: "hidden"
+        }}
       >
         <img
           src={props.src}
