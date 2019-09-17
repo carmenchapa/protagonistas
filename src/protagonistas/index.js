@@ -14,7 +14,6 @@ export default class Protagonistas extends React.Component {
         <div className="grid">
           {protas.map((e, i) => (
             <Prota
-              className="gridElement"
               key={i}
               name={e.name}
               src={e.img}
@@ -27,6 +26,14 @@ export default class Protagonistas extends React.Component {
   }
 }
 
+const protaContainer = src => {
+  return {
+    paddingTop: "100%",
+    backgroundImage: `url(${src})`,
+    backgroundSize: "cover"
+  };
+};
+
 const Prota = props => (
   <Link
     className="link"
@@ -35,23 +42,8 @@ const Prota = props => (
       protagonista: props.name
     }}
   >
-    <div style={{ flexDirection: "colum", alignSelf: "flex-start" }}>
-      <div
-        className="Centred"
-        style={{
-          width: "100%",
-          height: 300,
-          overflow: "hidden"
-        }}
-      >
-        <img
-          src={props.src}
-          height="100%"
-          width="100%"
-          alt=""
-          style={{ objectFit: "cover" }}
-        />
-      </div>
+    <div>
+      <div style={protaContainer(props.src)} />
       <p className="ProtagonistaName">{props.name.toUpperCase()}</p>
       <p className="ProtagonistaDescription">{props.description}</p>
     </div>

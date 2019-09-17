@@ -405,7 +405,6 @@ b {
   display: grid;
   justify-content: space-around;
   grid-template-columns: repeat(auto-fill, minmax(90%, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(16rem, 1fr));
 
   @media screen and (min-width: 500px) {
     grid-template-columns: repeat(auto-fill, minmax(38%, 1fr));
@@ -420,12 +419,19 @@ b {
     grid-template-columns: repeat(auto-fill, minmax(22%, 1fr));
   }
 }
-.grid > .gridElement {
-  background: #ede7f6;
-  padding: 1.5rem;
-  border-radius: 1rem;
+
+.gridMov {
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: repeat(auto-fill, minmax(90%, 1fr));
+
+  @media screen and (min-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, minmax(38%, 1fr));
+    grid-gap: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, minmax(32%, 1fr));
+  }
 }
-// body {
-//   margin: 1rem;
-//   font: 12px system-ui;
-// }

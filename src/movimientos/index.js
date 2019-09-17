@@ -8,12 +8,10 @@ export default class Movimientos extends React.Component {
     console.log("mov name", movimientos);
     return (
       <div className="AppContainer NabBarAvoiding ListContainer">
-        <div style={{ ...gridStyle, maxWidth: `${this.getWidth()}px` }}>
+        <div className="gridMov">
           {movimientos.map((e, i) => (
             <Movimiento
               key={i}
-              width={"28vw"}
-              height={"20vw"}
               name={e.name}
               src={e.img}
               description={e.shortText}
@@ -25,26 +23,12 @@ export default class Movimientos extends React.Component {
   }
 }
 
-const gridStyle = {
-  display: "flex",
-  // maxWidth: '1200px',
-  margin: "0 auto",
-  flexDirection: "row",
-  justifyContent: "flex-start",
-  flexWrap: "wrap"
-};
-
-const movimientoContainer = (width, height, src) => {
+const movimientoContainer = src => {
   return {
-    display: "flex",
-    width: width,
-    height: height,
-    overflow: "hidden",
+    paddingTop: "45%",
     backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6)60%, rgba(0, 0, 0, 0.95)100%),
 		url(${src})`,
-    backgroundSize: "contain",
-    margin: 20,
-    alignItems: "flex-end"
+    backgroundSize: "cover"
   };
 };
 
@@ -55,7 +39,7 @@ const Movimiento = props => {
       className="link"
       to={{ pathname: `/movimientos:${props.name}`, movimiento: props.name }}
     >
-      <div style={movimientoContainer(props.width, props.height, props.src)}>
+      <div style={movimientoContainer(props.src)}>
         <div style={{ flexDirection: "row", margin: 10, color: "var(--gold)" }}>
           <p className="ProtagonistaName">
             {props.name.toString().toUpperCase()}
