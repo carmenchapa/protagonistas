@@ -401,7 +401,7 @@ b {
   font-weight: bold;
 }
 
-.grid {
+.gridProtas {
   display: grid;
   justify-content: space-around;
   grid-template-columns: repeat(auto-fill, minmax(90%, 1fr));
@@ -409,8 +409,8 @@ b {
   @media screen and (min-width: 500px) {
     grid-template-columns: repeat(auto-fill, minmax(38%, 1fr));
     grid-gap: 1rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   @media screen and (min-width: 800px) {
     grid-template-columns: repeat(auto-fill, minmax(32%, 1fr));
@@ -428,8 +428,8 @@ b {
   @media screen and (min-width: 1000px) {
     grid-template-columns: repeat(auto-fill, minmax(38%, 1fr));
     grid-gap: 1rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   @media screen and (min-width: 1200px) {
     grid-template-columns: repeat(auto-fill, minmax(32%, 1fr));
