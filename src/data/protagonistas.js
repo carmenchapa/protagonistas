@@ -10,6 +10,7 @@ const protas = [
     Y está orgulloso de lo que hace. Vive del arte hace 10 años.`,
     img: require("../static/images/protagonistas/perro.jpg"),
     socialImg: require("../static/images/protagonistas/perro.jpg"),
+    instagram: "https://www.instagram.com/perrograff/",
     geo: { latitude: 6.255369, longitude: -75.622766 }
   },
   {
