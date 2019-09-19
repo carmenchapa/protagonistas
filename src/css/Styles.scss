@@ -423,7 +423,7 @@ b {
 .gridProtas {
   display: grid;
   justify-content: space-around;
-  grid-template-columns: repeat(auto-fill, minmax(90%, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(38%, 1fr));
 
   @media screen and (min-width: 500px) {
     grid-template-columns: repeat(auto-fill, minmax(38%, 1fr));
