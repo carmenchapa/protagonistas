@@ -78,12 +78,6 @@ const DesktopScreen = props => {
             <Rectangle width={'calc((20 + 2)*2vw)'} height={'20vw'} color={constants.GOLD} />
           </div>
 
-          {/* <TabBar />
-          <div className="Centred">
-            <h1>
-              <MdPlayCircleFilled size="4em" color={pink} />
-            </h1>
-          </div> */}
           <div
             style={{
               display: 'flex',
@@ -111,14 +105,15 @@ const DesktopScreen = props => {
 const imageContainer = src => {
   return {
     display: 'flex',
-    width: '100%',
-    paddingTop: '85%',
-    // height: '100%',
-    backgroundImage: `url(${src})`,
+    flexDirection: 'column',
+    width: '100vw',
+    height: '85vw',
+    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3)70%, rgba(0, 0, 0, 0.95)100%),
+		url(${src})`,
     backgroundSize: 'cover',
-    alignItems: 'flex-end',
-    backgroundPosition: 'center'
-    // justifyContent
+    alignItems: 'center',
+    backgroundPosition: 'center',
+    justifyContent: 'flex-end'
   }
 }
 
@@ -126,13 +121,21 @@ const MobileScreen = props => {
   const { name, protagonista } = props
   return (
     <div className='AppContainer Dark'>
-      {/* <div className='DarkContainer'> */}
       <div className='Centred' style={imageContainer(protagonista.img)}>
         <p className='Name'>{name.toUpperCase()}</p>
+        <p className='Text'>{protagonista.shortText}</p>
       </div>
-      {newText(protagonista.text)}
+      <div className='Column' style={{ padding: 15, justifyContent: 'centre' }}>
+        {newText(protagonista.text)}
+        <MovButton mov={protagonista.movimiento} />
 
-      {/* </div> */}
+        <TabBar />
+        {/* <div className="Centred">
+            <h1>
+              <MdPlayCircleFilled size="4em" color={pink} />
+            </h1>
+          </div> */}
+      </div>
     </div>
   )
 }
@@ -152,4 +155,14 @@ const TabBar = props => (
   </div>
 )
 
-const MovButton = props => <button className='MovButton'>{props.mov}</button>
+const MovButton = props => (
+  <Link
+    className='link Centred'
+    to={{
+      pathname: `/movimientos:${props.mov}`,
+      movimiento: props.mov
+    }}
+  >
+    <button className='MovButton'>{props.mov.toUpperCase()}</button>
+  </Link>
+)
