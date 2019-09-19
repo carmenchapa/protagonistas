@@ -12,11 +12,7 @@ const imageContainer = src => {
     alignItems: 'flex-end'
   }
 }
-const iconProps = {
-  size: '1.8em',
-  color: 'white',
-  style: { padding: 8, marginLeft: 4 }
-}
+
 export const Square = props => (
   <div
     className='Centred'
@@ -30,16 +26,8 @@ export const Square = props => (
     {props.text && <div style={{ padding: 40, fontSize: props.fontSize }}>{newText(props.text)}</div>}
     {props.src && (
       <div style={imageContainer(props.src)}>
-        {props.inst && (
-          <a href={props.inst} target='blank'>
-            <FaInstagram {...iconProps} />
-          </a>
-        )}
-        {props.facebook && (
-          <a href={props.inst} target='blank'>
-            <FaFacebook {...iconProps} />
-          </a>
-        )}
+        {props.inst && <SocialIcon link={props.inst} icon='instagram' />}
+        {props.facebook && <SocialIcon link={props.facebook} icon='facebook' />}
       </div>
     )}
   </div>
@@ -60,3 +48,16 @@ export const Rectangle = props => (
     {props.src && <img className='cover' src={props.src} alt='' />}
   </div>
 )
+
+export const SocialIcon = props => {
+  const iconProps = {
+    size: '1.8em',
+    color: 'white',
+    style: { padding: 8, marginLeft: 4 }
+  }
+  return (
+    <a href={props.link} target='blank'>
+      {props.icon === 'instagram' ? <FaInstagram {...iconProps} /> : props.icon === 'facebook' ? <FaFacebook {...iconProps} /> : null}
+    </a>
+  )
+}
