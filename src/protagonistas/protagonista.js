@@ -3,11 +3,9 @@ import protas from '../data/protagonistas'
 import { Link } from 'react-router-dom'
 import ResponsiveLayout from '../components/ResponsiveLayout'
 import { MdPlayCircleFilled } from 'react-icons/md'
-import { newText } from '../utils/helperFunctions'
-import { Square, Rectangle } from '../components/CommonComponents'
+import { GradientBackgroundImage, newText } from '../utils/helperFunctions'
+import { SocialIcon, Square, Rectangle } from '../components/CommonComponents'
 import * as constants from '../utils/constants'
-
-const pink = '#ff8592'
 
 export default class Protagonista extends React.Component {
   getHeight = () => window.innerHeight - 144 - 60
@@ -36,7 +34,7 @@ const DesktopScreen = props => {
           <div className='Centred'>
             {/* <MovButton mov={protagonista.movimiento.toUpperCase()} /> */}
             <h1>
-              <MdPlayCircleFilled size='8vw' color={pink} />
+              <MdPlayCircleFilled size='8vw' color={constants.PINK} />
             </h1>
           </div>
         </div>
@@ -102,40 +100,30 @@ const DesktopScreen = props => {
   )
 }
 
-const imageContainer = src => {
-  return {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '100vw',
-    height: '85vw',
-    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3)70%, rgba(0, 0, 0, 0.95)100%),
-		url(${src})`,
-    backgroundSize: 'cover',
-    alignItems: 'center',
-    backgroundPosition: 'center',
-    justifyContent: 'flex-end'
-  }
-}
-
 const MobileScreen = props => {
   const { name, protagonista } = props
   return (
     <div className='AppContainer Dark'>
-      <div className='Centred' style={imageContainer(protagonista.img)}>
+      <div className='Centred ProtaImgContainer' style={GradientBackgroundImage(protagonista.img)}>
         <p className='Name'>{name.toUpperCase()}</p>
         <p className='Text'>{protagonista.shortText}</p>
+        <div className='Column'>
+          {protagonista.instagram && <SocialIcon link={protagonista.instagram} icon='instagram' />}
+          {protagonista.facebook && <SocialIcon link={protagonista.facebook} icon='facebook' />}
+        </div>
       </div>
-      <div className='Column' style={{ padding: 15, justifyContent: 'centre' }}>
+      <div className='Column Dark' style={{ padding: 15, justifyContent: 'centre' }}>
         {newText(protagonista.text)}
         <MovButton mov={protagonista.movimiento} />
 
-        <TabBar />
-        {/* <div className="Centred">
-            <h1>
-              <MdPlayCircleFilled size="4em" color={pink} />
-            </h1>
-          </div> */}
+        {/* <TabBar />
+        <div className='Centred'>
+          <h1>
+            <MdPlayCircleFilled size='4em' color={constants.PINK} />
+          </h1>
+        </div> */}
       </div>
+      <MobileTab />
     </div>
   )
 }
@@ -144,16 +132,50 @@ const TabBar = props => (
   <div
     style={{
       display: 'flex',
-      // flex: 1,
       flexDirection: 'row',
       justifyContent: 'space-around',
       height: '40px'
     }}
   >
-    <p class='TabBarItem'>{'Documental'.toUpperCase()}</p>
-    <p class='TabBarItem'>{'Protagonistas'.toUpperCase()}</p>
+    <p onClick={props.onClick} class='TabBarItem'>
+      {'Documental'.toUpperCase()}
+    </p>
+    <p onClick={props.onClick} class='TabBarItem'>
+      {'Protagonistas'.toUpperCase()}
+    </p>
   </div>
 )
+
+class MobileTab extends React.Component {
+  state = {
+    toggle: false
+  }
+
+  handleClick = () => this.setState({ toggle: !this.state.toggle })
+
+  render() {
+    const tabsStyle = {
+      marginLeft: this.state.toggle ? '-100vw' : null,
+      transition: 'margin .5s'
+    }
+    console.log('clicking')
+    console.log(this.state.toggle)
+
+    return (
+      <div className='Dark'>
+        <TabBar onClick={() => this.handleClick()} />
+        <div className='Row'>
+          <div className='Centred' style={{ minWidth: '100vw', ...tabsStyle }}>
+            <h1>
+              <MdPlayCircleFilled size='4em' color={constants.PINK} />
+            </h1>
+          </div>
+          <div className='Centred' style={{ minWidth: '100vw' }}></div>
+        </div>
+      </div>
+    )
+  }
+}
 
 const MovButton = props => (
   <Link
