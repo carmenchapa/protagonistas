@@ -14,3 +14,20 @@ export function newText(text) {
     )
   })
 }
+
+export const GradientBackgroundImage = src => {
+  return {
+    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3)70%, rgba(0, 0, 0, 0.95)100%),
+		url(${src})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat'
+  }
+}
+
+export const BackgroundImage = src => {
+  return {
+    backgroundImage: `url(${src})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat'
+  }
+}

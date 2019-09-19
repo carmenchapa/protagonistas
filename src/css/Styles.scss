@@ -308,6 +308,16 @@ b {
   }
 }
 
+.ProtaImgContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 85vw;
+  align-items: center;
+  background-position: center;
+  justify-content: flex-end;
+}
+
 .ProtaImageContainer {
   justify-content: flex-end;
   padding: 30px;
@@ -365,6 +375,10 @@ b {
   flex-direction: row;
   color: var(--darkBlack);
   /* background-color: var(--darkBlack); */
+}
+
+.MovListImgContainer {
+  padding-top: 45%;
 }
 
 .MovimientoFichaContainer {
