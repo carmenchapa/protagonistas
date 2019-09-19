@@ -334,9 +334,11 @@ b {
 
 .Text {
   font-size: 1em;
+  font-weight: 600;
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
   @media screen and (min-width: 800px) {
+    font-weight: 400;
     font-size: 1.6vw;
   }
   @media screen and (min-width: 1300px) {
