@@ -5,34 +5,36 @@ import ResponsiveLayout from '../components/ResponsiveLayout'
 import { MdPlayCircleFilled } from 'react-icons/md'
 import { GradientBackgroundImage, newText } from '../utils/helperFunctions'
 import { SocialIcon, Square, Rectangle } from '../components/CommonComponents'
+import { ProtagonistasList } from '../protagonistas'
 import * as constants from '../utils/constants'
 
 export default class Protagonista extends React.Component {
-  getHeight = () => window.innerHeight - 144 - 60
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      window.scrollTo(0, 0)
+    }
+  }
 
   render() {
     // console.log('in prota', this.props.match.params.id)
     const name = this.props.match.params.id.replace(':', '')
     const protagonista = protas.find(item => item.name === name)
-    console.log(' mov', protagonista.movimiento)
 
     // const styles = {showSidebar: windowWidth > 768}
     return <ResponsiveLayout breakPoint={800} renderDesktop={() => <DesktopScreen protagonista={protagonista} name={name} />} renderMobile={() => <MobileScreen protagonista={protagonista} name={name} />} />
   }
 }
+
 const DesktopScreen = props => {
   const { name, protagonista } = props
   return (
     <div className='AppContainer'>
       <div className='FullFill Dark NabBarAvoidingHeight Row'>
         <div className='ProtaFichaContainer' style={{ paddingBottom: '7vw' }}>
-          {/* <div className="Centred Column"> */}
           <p className='Name'>{name.toUpperCase()}</p>
           {/* <p className="Mov">{`MOV: ${protagonista.movimiento.toUpperCase()}`}</p> */}
           {newText(protagonista.text)}
-          {/* </div> */}
           <div className='Centred'>
-            {/* <MovButton mov={protagonista.movimiento.toUpperCase()} /> */}
             <h1>
               <MdPlayCircleFilled size='8vw' color={constants.PINK} />
             </h1>
@@ -83,18 +85,13 @@ const DesktopScreen = props => {
               alignItems: 'flex-end'
             }}
           >
-            <Square
-              src={protagonista.socialImg}
-              // text="Comuna 13. El movimiento"
-              color={constants.CYAN}
-              size={'25vw'}
-              fontSize={20}
-              inst={protagonista.instagram}
-              facebook={protagonista.facebook}
-              // style={{ marginLeft: 30 }}
-            />
+            <Square src={protagonista.socialImg} color={constants.CYAN} size={'25vw'} fontSize={20} inst={protagonista.instagram} facebook={protagonista.facebook} />
           </div>
         </div>
+        <MovButton mov='POSTULA TU PROTAGONISTA' link='/' color={constants.PINK} />
+      </div>
+      <div className='Dark' style={{ paddingTop: 100, paddingBottom: 100 }}>
+        <ProtagonistasList />
       </div>
     </div>
   )
@@ -115,13 +112,6 @@ const MobileScreen = props => {
       <div className='Column Dark' style={{ padding: 15, justifyContent: 'centre' }}>
         {newText(protagonista.text)}
         <MovButton mov={protagonista.movimiento} />
-
-        {/* <TabBar />
-        <div className='Centred'>
-          <h1>
-            <MdPlayCircleFilled size='4em' color={constants.PINK} />
-          </h1>
-        </div> */}
       </div>
       <MobileTab />
     </div>
@@ -165,12 +155,14 @@ class MobileTab extends React.Component {
       <div className='Dark'>
         <TabBar onClick={() => this.handleClick()} />
         <div className='Row'>
-          <div className='Centred' style={{ minWidth: '100vw', ...tabsStyle }}>
+          <div className='Centred' style={{ minWidth: '100vw', height: '80vw', ...tabsStyle }}>
             <h1>
               <MdPlayCircleFilled size='4em' color={constants.PINK} />
             </h1>
           </div>
-          <div className='Centred' style={{ minWidth: '100vw' }}></div>
+          <div style={{ minWidth: '100vw' }}>
+            <ProtagonistasList />
+          </div>
         </div>
       </div>
     )
@@ -181,10 +173,12 @@ const MovButton = props => (
   <Link
     className='link Centred'
     to={{
-      pathname: `/movimientos:${props.mov}`,
+      pathname: props.link ? props.link : `/movimientos:${props.mov}`,
       movimiento: props.mov
     }}
   >
-    <button className='MovButton'>{props.mov.toUpperCase()}</button>
+    <button className='MovButton' style={props.color && { backgroundColor: props.color }}>
+      {props.mov.toUpperCase()}
+    </button>
   </Link>
 )
