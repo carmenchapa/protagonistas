@@ -2,7 +2,7 @@
   "name": "protas",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://carmenchapa.github.io/protagonisas",
+  "homepage": "https://carmenchapa.github.io/protagonistas",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "google-maps-react": "^2.0.2",
