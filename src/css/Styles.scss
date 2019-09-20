@@ -55,7 +55,7 @@ body {
 
 .NabBarAvoidingHeight {
   /* margin-top: 72px; */
-  height: calc(100% - 72px);
+  height: calc(100vh - 72px);
 }
 
 .FlexStyle {
@@ -405,14 +405,22 @@ b {
 .MovButton {
   background-color: var(--cyan);
   font-family: 'NunitoSansBlack';
-  height: 40px;
+  height: 8vw;
   border-radius: 5px;
   font-size: 1.5rem;
   color: #fff;
   border-width: 0px;
+  // padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  margin-top: 1.5rem;
+  margin-top: 2.8rem;
+  margin-bottom: 2rem;
+  @media screen and (min-width: 600px) {
+    height: 6vw;
+  }
+  @media screen and (min-width: 800px) {
+    height: 4vw;
+  }
 }
 
 .TabBarItem {
@@ -425,8 +433,7 @@ b {
   justify-content: space-around;
   grid-template-columns: repeat(auto-fill, minmax(38%, 1fr));
 
-  @media screen and (min-width: 500px) {
-    grid-template-columns: repeat(auto-fill, minmax(38%, 1fr));
+  @media screen and (min-width: 650px) {
     grid-gap: 1rem;
     padding-left: 2rem;
     padding-right: 2rem;
