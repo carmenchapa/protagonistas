@@ -4,7 +4,7 @@ import movimientos from '../data/movimientos'
 import { GradientBackgroundImage } from '../utils/helperFunctions'
 
 const Movimientos = () => (
-  <div className='AppContainer NabBarAvoiding ListContainer gridMov'>
+  <div className='AppContainer NabBarAvoiding ListContainer gridPadding gridMov'>
     {movimientos.map((e, i) => (
       <Movimiento key={i} name={e.name} src={e.img} description={e.shortText} />
     ))}

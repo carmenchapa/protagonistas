@@ -16,7 +16,7 @@ export default class Protagonistas extends React.Component {
 }
 
 export const ProtagonistasList = () => (
-  <div className='gridProtas'>
+  <div className='gridPadding gridProtas'>
     {protas.map((e, i) => (
       <Prota key={i} name={e.name} src={e.img} description={e.shortText} />
     ))}

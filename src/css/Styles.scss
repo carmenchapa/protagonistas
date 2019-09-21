@@ -428,6 +428,21 @@ b {
   font-weight: bold;
 }
 
+.gridPadding {
+  @media screen and (min-width: 650px) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+  @media screen and (min-width: 800px) {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  @media screen and (min-width: 1300px) {
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
+}
+
 .gridProtas {
   display: grid;
   justify-content: space-around;
@@ -435,14 +450,12 @@ b {
 
   @media screen and (min-width: 650px) {
     grid-gap: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
   @media screen and (min-width: 800px) {
     grid-template-columns: repeat(auto-fill, minmax(32%, 1fr));
   }
   @media screen and (min-width: 1300px) {
-    grid-template-columns: repeat(auto-fill, minmax(22%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
   }
 }
 
@@ -454,8 +467,6 @@ b {
   @media screen and (min-width: 1000px) {
     grid-template-columns: repeat(auto-fill, minmax(38%, 1fr));
     grid-gap: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
   @media screen and (min-width: 1200px) {
     grid-template-columns: repeat(auto-fill, minmax(32%, 1fr));
