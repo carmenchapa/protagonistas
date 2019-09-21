@@ -50,7 +50,7 @@ class NavBarMobile extends React.Component {
       transition: 'margin .5s'
     }
     // const [open, clickDrawer] = useState(false)
-    console.log('open', this.state.open)
+    // console.log('open', this.state.open)
     return (
       <div className={`NavBar NavBarMobile ${window.location.pathname === '/' ? 'NavProtas' : 'NavProtas'}`}>
         <div className='NavBarRight'>
@@ -76,11 +76,9 @@ class NavBarMobile extends React.Component {
 const Logo = props => <NavLink to={props.route}>{<img className='LogoMenu' width={useWindowDimensions().width > 800 ? 50 : 40} src={logo} alt='' />}</NavLink>
 
 const NavItem = props => (
-  <h3>
-    <NavLink className='NavBarLinks' activeClassName='ActiveNavBarLinks' to={props.route} onClick={() => props.onClick()}>
-      {props.route !== '/mapa' ? <IconLink name={props.routeName} /> : <FiGlobe size='1.5em' />}
-    </NavLink>
-  </h3>
+  <NavLink className='NavBarLinks' activeClassName='ActiveNavBarLinks' to={props.route} onClick={() => props.onClick()}>
+    {props.route !== '/mapa' ? <IconLink name={props.routeName} /> : <FiGlobe size='1.5em' />}
+  </NavLink>
 )
 
 const IconLink = props => {
