@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import ResponsiveLayout from './ResponsiveLayout'
 import { useWindowDimensions } from './WindowDimensionsProvider'
 import { FiGlobe } from 'react-icons/fi'
@@ -77,9 +77,9 @@ const Logo = props => <NavLink to={props.route}>{<img className='LogoMenu' width
 
 const NavItem = props => (
   <h3>
-    <Link className='NavBarLinks' activeClassName='ActiveNavBarLinks' to={props.route} onClick={() => props.onClick()}>
+    <NavLink className='NavBarLinks' activeClassName='ActiveNavBarLinks' to={props.route} onClick={() => props.onClick()}>
       {props.route !== '/mapa' ? <IconLink name={props.routeName} /> : <FiGlobe size='1.5em' />}
-    </Link>
+    </NavLink>
   </h3>
 )
 
