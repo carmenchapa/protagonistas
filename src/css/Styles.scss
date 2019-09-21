@@ -150,6 +150,7 @@ b {
 .NavProtas {
   /* background-color: transparent; */
   background-color: var(--darkBlack);
+  align-items: center;
 }
 
 .NavBarLeft {
@@ -178,6 +179,8 @@ b {
   padding: 5px 0;
   font-size: 1.4rem;
   transition: color 0.1s, background-color 0.1s;
+  // margin-block-start: 0;
+  // margin-block-end: 0;
 }
 
 .ActiveNavBarLinks {
@@ -470,5 +473,19 @@ b {
   }
   @media screen and (min-width: 1200px) {
     grid-template-columns: repeat(auto-fill, minmax(32%, 1fr));
+  }
+}
+
+.gridEjes {
+  display: grid;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  justify-content: space-around;
+  grid-template-columns: repeat(auto-fill, minmax(90%, 1fr));
+  // grid-template-rows: repeat(auto-fill, minmax(90%, 1fr));
+
+  @media screen and (min-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+    grid-gap: 1rem;
   }
 }
