@@ -27,7 +27,7 @@ const NavBarDesktop = props => {
         {props.routes
           .filter(e => e[1] !== 'HOME')
           .map((e, i) => (
-            <NavItem key={i} route={e[0]} routeName={capitalizeFirst(e[1].replace('/', ''))} />
+            <NavItem key={i} route={e[0]} routeName={capitalizeFirst(e[1].replace('/', ''))} onClick={() => {}} />
           ))}
       </div>
     </div>
@@ -35,13 +35,20 @@ const NavBarDesktop = props => {
 }
 
 class NavBarMobile extends React.Component {
-  state = { open: false }
+  state = {
+    open: false,
+    toggle: false
+  }
 
   closeDrawer = () => {
     console.log('in click drawer')
     this.setState({ open: false })
   }
   render() {
+    const drawerStyle = {
+      marginRight: this.state.toggle ? '100vw' : null,
+      transition: 'margin .5s'
+    }
     // const [open, clickDrawer] = useState(false)
     console.log('open', this.state.open)
     return (
