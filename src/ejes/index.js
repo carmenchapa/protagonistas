@@ -1,4 +1,9 @@
 import React from 'react'
+import ent from '../static/images/ejes/ent.svg'
+import education from '../static/images/ejes/education.svg'
+import art from '../static/images/ejes/art.svg'
+import science from '../static/images/ejes/science.svg'
+
 // import data from '../data/generalTexts'
 
 export default class Ejes extends React.Component {
@@ -6,20 +11,24 @@ export default class Ejes extends React.Component {
     return (
       <div className='AppContainer NabBarAvoiding'>
         <div className=' gridPadding gridEjes'>
-          {/* <p>{data.ejes}</p> */}
-          {/* <div className="FlexStyle Row"> */}
-          <div className='FlexStyle' style={cyan}></div>
-          <div className='FlexStyle' style={pink}></div>
-          {/* </div> */}
-
-          {/* <div className="FlexStyle Row"> */}
-          <div className='FlexStyle' style={green}></div>
-          <div className='FlexStyle' style={aquamarine}></div>
-          {/* </div> */}
+          <EjeSquare img={ent} color={cyan} />
+          <EjeSquare img={education} color={pink} />
+          <EjeSquare img={art} color={green} />
+          <EjeSquare img={science} color={aquamarine} />
         </div>
       </div>
     )
   }
+}
+
+const EjeSquare = props => (
+  <div className='FlexStyle Centred' style={props.color}>
+    <img style={inside} src={props.img} alt='' />
+  </div>
+)
+
+const inside = {
+  marginTop: '-100%'
 }
 
 const pink = {
@@ -27,6 +36,7 @@ const pink = {
   backgroundColor: 'var(--pink)'
 }
 const cyan = {
+  // --aspectRatio: '1/1',
   paddingTop: '100%',
   backgroundColor: 'var(--cyan)'
 }
@@ -37,12 +47,4 @@ const aquamarine = {
 const green = {
   paddingTop: '100%',
   backgroundColor: 'var(--green)'
-}
-
-const containerStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  marginLeft: '18vw',
-  marginRight: '18vw',
-  fontSize: '1.4rem'
 }
