@@ -11,10 +11,10 @@ export default class Ejes extends React.Component {
     return (
       <div className='AppContainer NabBarAvoiding'>
         <div className=' gridPadding gridEjes'>
-          <EjeSquare img={ent} color={cyan} />
-          <EjeSquare img={education} color={pink} />
-          <EjeSquare img={art} color={green} />
-          <EjeSquare img={science} color={aquamarine} />
+          <EjeSquare img={ent} text='emprendeduría' color={cyan} />
+          <EjeSquare img={education} text='educación' color={pink} />
+          <EjeSquare img={art} text='arte' color={green} />
+          <EjeSquare img={science} text='ciencia' color={aquamarine} />
         </div>
       </div>
     )
@@ -23,11 +23,20 @@ export default class Ejes extends React.Component {
 
 const EjeSquare = props => (
   <div className='FlexStyle Centred' style={props.color}>
-    <img style={inside} src={props.img} alt='' />
+    <div style={inside}>
+      <img src={props.img} alt='' />
+      <p className='Mov' style={{ color: '#fff' }}>
+        {props.text}
+      </p>
+    </div>
   </div>
 )
 
 const inside = {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
   marginTop: '-100%'
 }
 
