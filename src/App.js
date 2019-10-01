@@ -23,7 +23,7 @@ function App() {
             <Route exact path={ROUTES.HOME[0]} component={Home} />
             <Route path={ROUTES.MOVIMIENTOS[0]} component={Movimientos} />
             <Route path={ROUTES.PROTAGONISTAS[0]} component={Protagonistas} />
-            <Route path={ROUTES.EJES[0]} component={Ejes} />
+            {/* <Route path={ROUTES.EJES[0]} component={Ejes} /> */}
             <Route path={ROUTES.MAPA[0]} component={Mapa} />
             <Route path={ROUTES.PROTAGONISTA[0]} component={Protagonista} />
             <Route path={ROUTES.MOVIMIENTO[0]} component={Movimiento} />
