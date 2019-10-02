@@ -85,6 +85,10 @@ b {
   font-weight: 'black';
 }
 
+.White {
+  color: #fff;
+}
+
 /* ------* GENERAL STYLES *------ */
 
 .FullFill {
@@ -255,7 +259,14 @@ b {
 .HomeBackground {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.95) 100%), url('../static/images/homeBackground.jpg');
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.1) 30%,
+      rgba(0, 0, 0, 0.1) 70%,
+      rgba(0, 0, 0, 0.95) 100%
+    ),
+    url('../static/images/homeBackground.jpg');
 
   background-repeat: no-repeat;
   background-size: 100% cover;
