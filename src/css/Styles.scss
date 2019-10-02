@@ -102,6 +102,11 @@ b {
   background-color: var(--darkBlack);
 }
 
+.Light {
+  color: var(--darkBlack);
+  background-color: white;
+}
+
 .WhiteContainer {
   width: 100%;
   height: 100%;
@@ -288,19 +293,23 @@ b {
 
 /* ------* PROTAGONISTAS *------ */
 
-.ProtasContainer {
-  background-color: var(--darkBlack);
+// .ProtasContainer {
+//   background-color: var(--darkBlack);
+// }
+
+.OldLaceColor {
+  color: OldLace;
 }
 
 .ProtagonistaName {
   font-family: 'NunitoSansBlack';
   margin-block-end: 0.2em;
-  color: var(--gold);
+  // color: OldLace;
 }
 
 .ProtagonistaDescription {
   margin-block-start: 0.2em;
-  color: OldLace;
+  // color: OldLace;
 }
 
 /* ------* PROTAGONISTA FICHA *------ */

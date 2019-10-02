@@ -140,7 +140,7 @@ const MobileScreen = props => {
         {newText(protagonista.text)}
         <MovButton mov={protagonista.movimiento} />
       </div>
-      <MobileTab />
+      <MobileTab color='dark' />
     </div>
   )
 }

@@ -5,6 +5,7 @@ import ResponsiveLayout from '../components/ResponsiveLayout'
 import { MdPlayCircleFilled } from 'react-icons/md'
 import { GradientBackgroundImage, newText } from '../utils/helperFunctions'
 import MobileTab from '../components/MobileTab'
+import { ProtagonistasList } from '../protagonistas'
 
 import * as constants from '../utils/constants'
 
@@ -45,13 +46,16 @@ const DesktopScreen = props => {
             </h1>
           </div>
         </div>
-        <div className='Centred MovimientoImageContainer'>
-          {/* <img
+        {/* <div className='Centred MovimientoImageContainer'>
+          <img
               className="Centred MovimientoImage"
               src={movimiento.img}
               alt=""
-            /> */}
-        </div>
+            /> 
+        </div> */}
+      </div>
+      <div style={{ paddingTop: 100, paddingBottom: 100 }}>
+        <ProtagonistasList background='white' />
       </div>
     </div>
   )

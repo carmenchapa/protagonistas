@@ -39,7 +39,7 @@ export default class MobileTab extends React.Component {
     console.log(this.state.toggle)
 
     return (
-      <div className='Dark'>
+      <div className={this.props.color === 'dark' && 'Dark'}>
         <TabBar onClick={() => this.handleClick()} />
         <div className='Row'>
           <div className='Centred' style={{ minWidth: '100vw', height: '80vw', ...tabsStyle }}>
@@ -48,7 +48,7 @@ export default class MobileTab extends React.Component {
             </h1>
           </div>
           <div style={{ minWidth: '100vw' }}>
-            <ProtagonistasList />
+            <ProtagonistasList background='white' />
           </div>
         </div>
       </div>

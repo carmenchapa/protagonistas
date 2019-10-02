@@ -15,10 +15,10 @@ export default class Protagonistas extends React.Component {
   }
 }
 
-export const ProtagonistasList = () => (
+export const ProtagonistasList = props => (
   <div className='gridPadding gridProtas'>
     {protas.map((e, i) => (
-      <Prota key={i} name={e.name} src={e.img} description={e.shortText} />
+      <Prota key={i} name={e.name} src={e.img} description={e.shortText} background={props.background} />
     ))}
   </div>
 )
@@ -33,7 +33,7 @@ const protaContainer = src => {
 
 const Prota = props => (
   <Link
-    className='link ProtasContainer'
+    className={`link ${props.background === 'white' ? 'Light' : 'Dark OldLaceColor'}`}
     to={{
       pathname: `/protagonistas:${props.name}`,
       protagonista: props.name
