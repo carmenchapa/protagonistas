@@ -5,7 +5,9 @@ import ResponsiveLayout from '../components/ResponsiveLayout'
 import { MdPlayCircleFilled } from 'react-icons/md'
 import { GradientBackgroundImage, newText } from '../utils/helperFunctions'
 import { SocialIcon, Square, Rectangle } from '../components/CommonComponents'
+import MobileTab from '../components/MobileTab'
 import { ProtagonistasList } from '../protagonistas'
+
 import * as constants from '../utils/constants'
 
 export default class Protagonista extends React.Component {
@@ -21,7 +23,13 @@ export default class Protagonista extends React.Component {
     const protagonista = protas.find(item => item.name === name)
 
     // const styles = {showSidebar: windowWidth > 768}
-    return <ResponsiveLayout breakPoint={800} renderDesktop={() => <DesktopScreen protagonista={protagonista} name={name} />} renderMobile={() => <MobileScreen protagonista={protagonista} name={name} />} />
+    return (
+      <ResponsiveLayout
+        breakPoint={800}
+        renderDesktop={() => <DesktopScreen protagonista={protagonista} name={name} />}
+        renderMobile={() => <MobileScreen protagonista={protagonista} name={name} />}
+      />
+    )
   }
 }
 
@@ -70,9 +78,21 @@ const DesktopScreen = props => {
                   movimiento: protagonista.movimiento
                 }}
               >
-                <Square text={`Comuna 13.\nEl movimiento`} color={constants.CYAN} size={'20vw'} fontSize={'20vw'} style={{ marginRight: '2vw' }} />
+                <Square
+                  text={`Comuna 13.\nEl movimiento`}
+                  color={constants.CYAN}
+                  size={'20vw'}
+                  fontSize={'20vw'}
+                  style={{ marginRight: '2vw' }}
+                />
               </Link>
-              <Square text={`Comuna 13.\nEl movimiento`} color='#fff' size={'20vw'} fontSize={'20vw'} style={{ marginLeft: '2vw' }} />
+              <Square
+                text={`Comuna 13.\nEl movimiento`}
+                color='#fff'
+                size={'20vw'}
+                fontSize={'20vw'}
+                style={{ marginLeft: '2vw' }}
+              />
             </div>
 
             <Rectangle width={'calc((20 + 2)*2vw)'} height={'20vw'} color={constants.GOLD} />
@@ -85,7 +105,14 @@ const DesktopScreen = props => {
               alignItems: 'flex-end'
             }}
           >
-            <Square src={protagonista.socialImg} color={constants.CYAN} size={'25vw'} fontSize={20} inst={protagonista.instagram} facebook={protagonista.facebook} />
+            <Square
+              src={protagonista.socialImg}
+              color={constants.CYAN}
+              size={'25vw'}
+              fontSize={20}
+              inst={protagonista.instagram}
+              facebook={protagonista.facebook}
+            />
           </div>
         </div>
         <MovButton mov='POSTULA TU PROTAGONISTA' link='/' color={constants.PINK} />
@@ -116,57 +143,6 @@ const MobileScreen = props => {
       <MobileTab />
     </div>
   )
-}
-
-const TabBar = props => (
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      height: '40px'
-    }}
-  >
-    <p onClick={props.onClick} class='TabBarItem'>
-      {'Documental'.toUpperCase()}
-    </p>
-    <p onClick={props.onClick} class='TabBarItem'>
-      {'Protagonistas'.toUpperCase()}
-    </p>
-  </div>
-)
-
-class MobileTab extends React.Component {
-  state = {
-    toggle: false
-  }
-
-  handleClick = () => this.setState({ toggle: !this.state.toggle })
-
-  render() {
-    const tabsStyle = {
-      marginLeft: this.state.toggle ? '-100vw' : null,
-      transition: 'margin .5s'
-    }
-    console.log('clicking')
-    console.log(this.state.toggle)
-
-    return (
-      <div className='Dark'>
-        <TabBar onClick={() => this.handleClick()} />
-        <div className='Row'>
-          <div className='Centred' style={{ minWidth: '100vw', height: '80vw', ...tabsStyle }}>
-            <h1>
-              <MdPlayCircleFilled size='4em' color={constants.PINK} />
-            </h1>
-          </div>
-          <div style={{ minWidth: '100vw' }}>
-            <ProtagonistasList />
-          </div>
-        </div>
-      </div>
-    )
-  }
 }
 
 const MovButton = props => (
