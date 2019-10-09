@@ -6,6 +6,7 @@ import { MdPlayCircleFilled } from 'react-icons/md'
 import { GradientBackgroundImage, newText } from '../utils/helperFunctions'
 import MobileTab from '../components/MobileTab'
 import { ProtagonistasList } from '../protagonistas'
+import white_p from '../static/images/white_p.svg'
 
 import * as constants from '../utils/constants'
 
@@ -34,12 +35,31 @@ const DesktopScreen = props => {
         style={{
           backgroundImage: `url(${movimiento.img})`,
           backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'right bottom'
+          backgroundSize: 'cover',
+          backgroundPosition: 'calc((100vh - 68px) / 3)'
         }}
       >
+        <div
+          className='Movimiento NabBarAvoidingHeight'
+          style={{
+            backgroundImage: `url(${white_p})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            height: 'calc(100vh - 68px)',
+            width: 'calc((100vh - 68px) / 3 * 2)',
+            backgroundPosition: 'bottom',
+            paddingTop: 68
+          }}
+        >
+          <div className='MovimientoFichaContainer'>
+            <p className='Name'>{name.toUpperCase()}</p>
+            {newText(movimiento.text)}
+          </div>
+          {/* <img src={white_p} alt='' style={{ objectFit: 'cover', height: 'calc(100vh - 68px)', paddingTop: 68 }} /> */}
+        </div>
         <div className='MovimientoFichaContainer'>
-          <p className='Name'>{name.toUpperCase()}</p>
-          {newText(movimiento.text)}
+          {/* <p className='Name'>{name.toUpperCase()}</p>
+          {newText(movimiento.text)} */}
           <div className='Centred'>
             <h1>
               <MdPlayCircleFilled size='4em' color={constants.PINK} />
@@ -71,6 +91,7 @@ const MobileScreen = props => {
       </div>
       <div className='Column' style={{ padding: 15, justifyContent: 'centre' }}>
         {newText(movimiento.text)}
+        {newText(movimiento.text2)}
       </div>
       <MobileTab />
     </div>

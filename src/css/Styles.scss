@@ -55,7 +55,7 @@ body {
 
 .NabBarAvoidingHeight {
   /* margin-top: 72px; */
-  height: calc(100vh - 72px);
+  height: calc(100vh - 70px);
 }
 
 .FlexStyle {
@@ -363,11 +363,11 @@ b {
 .ProtaImageContainer {
   justify-content: flex-end;
   padding: 30px;
-  padding-top: calc(72px + 30px);
+  padding-top: calc(70px + 30px);
 }
 
 .ProtaImage {
-  height: calc(100vh - 60px - 72px);
+  height: calc(100vh - 60px - 70px);
   width: calc(60vh - 60px);
   object-fit: cover;
 }
@@ -427,9 +427,11 @@ b {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 80px;
-  padding-right: calc(60px + 2vw);
-  padding-left: calc(40px + 1vw);
+  padding: 1.5em;
+  padding-right: 3em;
+  padding-left: 3em;
+  // padding-right: calc(60px + 2vw);
+  // padding-left: calc(40px + 1vw);
 }
 
 .MovimientoImageContainer {
