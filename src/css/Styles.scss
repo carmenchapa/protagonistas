@@ -121,6 +121,25 @@ b {
   object-fit: cover;
 }
 
+/* ------* BACKGROUND COLORS *------ */
+
+.pink {
+  background-color: var(--pink);
+}
+.cyan {
+  background-color: var(--cyan);
+}
+.aquamarine {
+  background-color: var(--aquamarine);
+}
+.green {
+  background-color: var(--green);
+}
+
+.pT100 {
+  padding-top: 100%;
+}
+
 /* ------* NAVIGATION *------ */
 
 .link {
