@@ -510,9 +510,6 @@ b {
     grid-template-columns: repeat(auto-fill, minmax(38%, 1fr));
     grid-gap: 1rem;
   }
-  @media screen and (min-width: 1200px) {
-    grid-template-columns: repeat(auto-fill, minmax(32%, 1fr));
-  }
 }
 
 .gridEjes {
