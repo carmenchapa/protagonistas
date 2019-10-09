@@ -71,7 +71,6 @@ const MobileScreen = props => {
       </div>
       <div className='Column' style={{ padding: 15, justifyContent: 'centre' }}>
         {newText(movimiento.text)}
-        {/* <MovButton mov={movimiento.movimiento} /> */}
       </div>
       <MobileTab />
     </div>
