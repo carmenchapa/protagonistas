@@ -10,6 +10,7 @@ const protas = [
 		Él mismo se describe como un narrador de historias, las cuales cuenta a travésde sus grafitis y los de sus amigos. Sabe que un graffiti no es la solución atodos los problemas de su comunidad, pero sabe que a través de estos se logra llamar la atención del gobierno, la empresa privada y la ciudadanía, parasumar acciones y lograr un impacto mayor.`,
     img: require("../static/images/protagonistas/perro.jpg"),
     socialImg: require("../static/images/protagonistas/perro.jpg"),
+    instagram: "https://www.instagram.com/perrograff/",
     geo: {latitude: 6.255369, longitude: -75.622766}
   },
   {

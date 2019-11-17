@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 // import { Link } from 'react-router-dom';
 // import SignOutButton from '../SignOut';
-import * as ROUTES from './routes';
+import * as ROUTES from './routes'
 // import { AuthUserContext } from '../Session';
 
 // import { withStyles, createStyles } from '@material-ui/core';
@@ -13,17 +13,16 @@ import NavBar from '../components/NavBar'
 // import TemporaryDrawer from './Drawer'
 
 const styles = {
-    root: {
-        flexGrow: 1,
-    },
-    color: {
-        color: '#FFF',
-    },
-    link: {
-        textDecoration: 'none'
-    }
+  root: {
+    flexGrow: 1
+  },
+  color: {
+    color: '#FFF'
+  },
+  link: {
+    textDecoration: 'none'
+  }
 }
-
 
 const Navigation = () => (
   <div>
@@ -32,21 +31,20 @@ const Navigation = () => (
     authUser => authUser ? <NavigationAuth /> : <NavigationNonAuth />
     }
 		</AuthUserContext.Consumer> */}
-		<NavigationAuth />
+    <NavigationAuth />
   </div>
-);
+)
 
 // const NavigationAuth = withStyles(styles)(({ root, color, link }: Props) => (
 const NavigationAuth = () => (
-    <div style={styles.root} >
-    <NavBar 
-    routes={[ROUTES.HOME, ROUTES.ABOUT, ROUTES.MOVIMIENTOS, ROUTES.PROTAGONISTAS, ROUTES.EJES, ROUTES.MAPA]} 
-    // signOut={<SignOutButton/>}
-		/>
-    </div>
-    
-);
-  
+  <div style={styles.root}>
+    <NavBar
+      routes={[ROUTES.HOME, ROUTES.ABOUT, ROUTES.MOVIMIENTOS, ROUTES.PROTAGONISTAS, ROUTES.MAPA]}
+      // signOut={<SignOutButton/>}
+    />
+  </div>
+)
+
 // const NavigationNonAuth = () => (
 //     <AppBar position="static">
 //         <Toolbar>
@@ -58,4 +56,4 @@ const NavigationAuth = () => (
 //     </AppBar>
 // );
 
-export default Navigation;
+export default Navigation

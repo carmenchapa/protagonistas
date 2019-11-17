@@ -39,6 +39,11 @@ body,
   /* display: flex; */
 }
 
+.FullFill {
+  height: 100%;
+  /* display: flex; */
+}
+
 body {
   font-family: "NunitoExtraLight";
 }
@@ -50,7 +55,7 @@ body {
 
 .NabBarAvoidingHeight {
   /* margin-top: 72px; */
-  height: calc(100% - 72px);
+  height: calc(100vh - 70px);
 }
 
 .FlexStyle {
@@ -80,14 +85,26 @@ b {
   font-weight: "black";
 }
 
+.White {
+  color: #fff;
+}
+
 /* ------* GENERAL STYLES *------ */
 
-.DarkContainer {
+.FullFill {
   width: 100%;
   height: 100%;
   display: flex;
+}
+
+.Dark {
   color: white;
   background-color: var(--darkBlack);
+}
+
+.Light {
+  color: var(--darkBlack);
+  background-color: white;
 }
 
 .WhiteContainer {
@@ -102,6 +119,25 @@ b {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+/* ------* BACKGROUND COLORS *------ */
+
+.pink {
+  background-color: var(--pink);
+}
+.cyan {
+  background-color: var(--cyan);
+}
+.aquamarine {
+  background-color: var(--aquamarine);
+}
+.green {
+  background-color: var(--green);
+}
+
+.pT100 {
+  padding-top: 100%;
 }
 
 /* ------* NAVIGATION *------ */
@@ -142,6 +178,7 @@ b {
 .NavProtas {
   /* background-color: transparent; */
   background-color: var(--darkBlack);
+  align-items: center;
 }
 
 .NavBarLeft {
@@ -170,6 +207,8 @@ b {
   padding: 5px 0;
   font-size: 1.4rem;
   transition: color 0.1s, background-color 0.1s;
+  // margin-block-start: 0;
+  // margin-block-end: 0;
 }
 
 .ActiveNavBarLinks {
@@ -255,13 +294,13 @@ b {
     url("../static/images/homeBackground.jpg");
 
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: 100% cover;
   /* bottom: 0; */
 }
 
 .HomeTitle {
   position: relative;
-  font-size: 3.6rem;
+  font-size: 6vw;
   font-family: "NunitoSansBlack";
   top: 45vh;
   margin-left: 10vh;
@@ -274,19 +313,23 @@ b {
 
 /* ------* PROTAGONISTAS *------ */
 
-.ProtasContainer {
-  background-color: var(--darkBlack);
+// .ProtasContainer {
+//   background-color: var(--darkBlack);
+// }
+
+.OldLaceColor {
+  color: OldLace;
 }
 
 .ProtagonistaName {
   font-family: "NunitoSansBlack";
   margin-block-end: 0.2em;
-  color: var(--gold);
+  // color: OldLace;
 }
 
 .ProtagonistaDescription {
   margin-block-start: 0.2em;
-  color: OldLace;
+  // color: OldLace;
 }
 
 /* ------* PROTAGONISTA FICHA *------ */
@@ -308,23 +351,36 @@ b {
   }
 }
 
+.ProtaImgContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 85vw;
+  align-items: center;
+  background-position: center;
+  justify-content: flex-end;
+}
+
 .ProtaImageContainer {
   justify-content: flex-end;
   padding: 30px;
-  padding-top: calc(72px + 30px);
+  padding-top: calc(70px + 30px);
 }
 
 .ProtaImage {
-  height: calc(100vh - 60px - 72px);
+  height: calc(100vh - 60px - 70px);
   width: calc(60vh - 60px);
   object-fit: cover;
 }
 
 .Name {
   font-family: "NunitoSansBlack";
-  font-size: 3.3vw;
+  font-size: 2em;
   margin-block-end: 0;
   margin-block-start: 0.6em;
+  @media screen and (min-width: 800px) {
+    font-size: 3.3vw;
+  }
 }
 
 .Mov {
@@ -334,11 +390,13 @@ b {
 }
 
 .Text {
-  font-size: 1.7vw;
+  font-size: 1rem;
+  font-weight: 600;
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
-  @media screen and (min-width: 700px) {
-    font-size: 1.5vw;
+  @media screen and (min-width: 800px) {
+    font-weight: 400;
+    font-size: 1.6vw;
   }
   @media screen and (min-width: 1300px) {
     font-size: 1.3vw;
@@ -348,11 +406,6 @@ b {
 .Bold {
   font-weight: bold;
 }
-
-/* .contain {
-  height: "calc(100% - 60)";
-  object-fit: scale-down;
-} */
 
 .PopupName {
   font-family: "NunitoSansBlack";
@@ -372,13 +425,19 @@ b {
   /* background-color: var(--darkBlack); */
 }
 
+.MovListImgContainer {
+  padding-top: 45%;
+}
+
 .MovimientoFichaContainer {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 80px;
-  padding-right: calc(60px + 2vw);
-  padding-left: calc(40px + 1vw);
+  padding: 1.5em;
+  padding-right: 3em;
+  padding-left: 3em;
+  // padding-right: calc(60px + 2vw);
+  // padding-left: calc(40px + 1vw);
 }
 
 .MovimientoImageContainer {
@@ -396,17 +455,81 @@ b {
 .MovButton {
   background-color: var(--cyan);
   font-family: "NunitoSansBlack";
-  height: 40px;
+  height: 8vw;
   border-radius: 5px;
   font-size: 1.5rem;
   color: #fff;
   border-width: 0px;
+  // padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  margin-top: 1.5rem;
+  margin-top: 2.8rem;
+  margin-bottom: 2rem;
+  @media screen and (min-width: 600px) {
+    height: 6vw;
+  }
+  @media screen and (min-width: 800px) {
+    height: 4vw;
+  }
 }
 
 .TabBarItem {
   font-family: "NunitoSansBlack";
   font-weight: bold;
+}
+
+.gridPadding {
+  @media screen and (min-width: 650px) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+  @media screen and (min-width: 800px) {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  @media screen and (min-width: 1300px) {
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
+}
+
+.gridProtas {
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: repeat(auto-fill, minmax(38%, 1fr));
+
+  @media screen and (min-width: 650px) {
+    grid-gap: 1rem;
+  }
+  @media screen and (min-width: 800px) {
+    grid-template-columns: repeat(auto-fill, minmax(32%, 1fr));
+  }
+  @media screen and (min-width: 1300px) {
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+  }
+}
+
+.gridMov {
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: repeat(auto-fill, minmax(90%, 1fr));
+
+  @media screen and (min-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, minmax(38%, 1fr));
+    grid-gap: 1rem;
+  }
+}
+
+.gridEjes {
+  display: grid;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  justify-content: space-around;
+  grid-template-columns: repeat(auto-fill, minmax(90%, 1fr));
+  // grid-template-rows: repeat(auto-fill, minmax(90%, 1fr));
+
+  @media screen and (min-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+    grid-gap: 1rem;
+  }
 }
