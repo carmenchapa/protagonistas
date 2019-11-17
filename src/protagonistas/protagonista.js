@@ -1,38 +1,39 @@
-import React from "react";
-import protas from "../data/protagonistas";
-import { Link } from "react-router-dom";
-import { MdPlayCircleFilled } from "react-icons/md";
-import { newText } from "../utils/helperFunctions";
-import { Square, Rectangle } from "../components/CommonComponents";
-import * as constants from "../utils/constants";
+import React from "react"
+import protas from "../data/protagonistas"
+import {Link} from "react-router-dom"
+import {MdPlayCircleFilled} from "react-icons/md"
+import {newText} from "../utils/helperFunctions"
+import {Square, Rectangle} from "../components/CommonComponents"
+import * as constants from "../utils/constants"
 
-const pink = "#ff8592";
+const pink = "#ff8592"
 
 export default class Protagonista extends React.Component {
-  getHeight = () => window.innerHeight - 144 - 60;
+  getHeight = () => window.innerHeight - 144 - 60
 
   render() {
     // console.log('in prota', this.props.match.params.id)
-    const name = this.props.match.params.id.replace(":", "");
-    const protagonista = protas.find(item => item.name === name);
-    console.log(" mov", protagonista.movimiento);
+    const name = this.props.match.params.id.replace(":", "")
+    const protagonista = protas.find(item => item.name === name)
+    console.log(" mov", protagonista.movimiento)
+    console.log("full", this.props)
 
     // const styles = {showSidebar: windowWidth > 768}
     return (
-      <div className="AppContainer" style={{ alignContent: "center" }}>
+      <div className="AppContainer" style={{alignContent: "center"}}>
         <div className="DarkContainer NabBarAvoidingHeight Row">
-          <div className="ProtaFichaContainer" style={{ paddingBottom: "7vw" }}>
+          <div className="ProtaFichaContainer" style={{paddingBottom: "7vw"}}>
             {/* <div className="Centred Column"> */}
             <p className="Name">{name.toUpperCase()}</p>
+            <p className="Text Bold">{protagonista.fullName}</p>
             {/* <p className="Mov">{`MOV: ${protagonista.movimiento.toUpperCase()}`}</p> */}
             {newText(protagonista.text)}
             {/* </div> */}
-            <div className="Centred">
-              {/* <MovButton mov={protagonista.movimiento.toUpperCase()} /> */}
+            {/* <div className="Centred">
               <h1>
                 <MdPlayCircleFilled size="8vw" color={pink} />
               </h1>
-            </div>
+            </div> */}
           </div>
           <div className="Centred ProtaImageContainer">
             <img className="Centred ProtaImage" src={protagonista.img} alt="" />
@@ -71,7 +72,7 @@ export default class Protagonista extends React.Component {
                     color={constants.CYAN}
                     size={"20vw"}
                     fontSize={"20vw"}
-                    style={{ marginRight: "2vw" }}
+                    style={{marginRight: "2vw"}}
                   />
                 </Link>
                 <Square
@@ -79,7 +80,7 @@ export default class Protagonista extends React.Component {
                   color="#fff"
                   size={"20vw"}
                   fontSize={"20vw"}
-                  style={{ marginLeft: "2vw" }}
+                  style={{marginLeft: "2vw"}}
                 />
               </div>
 
@@ -115,7 +116,7 @@ export default class Protagonista extends React.Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -132,6 +133,6 @@ const TabBar = props => (
     <p class="TabBarItem">{"Documental".toUpperCase()}</p>
     <p class="TabBarItem">{"Protagonistas".toUpperCase()}</p>
   </div>
-);
+)
 
-const MovButton = props => <button className="MovButton">{props.mov}</button>;
+const MovButton = props => <button className="MovButton">{props.mov}</button>
