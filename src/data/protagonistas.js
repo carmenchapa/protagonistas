@@ -1,29 +1,31 @@
 const protas = [
   {
     name: "perro",
+    fullName: `Daniel Felipe Quiceno, Medellín, Colombia`,
     movimiento: "comuna13",
-    shortText: "Artista de Medellín. Graffiti - Arte urbano",
-    text: `También conocido, aunque menos, como Daniel Felipe Quiceno. Es artista, es grafitero. Tiene 29 años.
-    El Perro quería ser uno de los mejores grafiteros de Medellín y ahí está: es uno de los fundadores del grafitour de la C13.
-    El arte es su manera de tramitar la realidad.
-    “Turismo comunitario” es como define el movimiento alrededor de la apropiación de color en las paredes del barrio. Al grafitour, mal contadas, asisten dos mil personas por día.
-    Y está orgulloso de lo que hace. Vive del arte hace 10 años.`,
+    shortText:
+      "Cofundador del “Graffitour” Comuna 13, habitante del barrio San Javier.",
+    text: `Artista urbano, graffitero por pasión, arquitecto por vocación, encuentra en elarte la mejor forma de relacionarse con el espacio y la comunidad.
+		A pesar de estar inmerso en la violencia que azotó la comuna por muchosaños, decidió montar un   “parche” (una iniciativa popular) que incluyerajóvenes y mayores, con el objetivo de brindar oportunidades a todos loshabitantes del barrio. Gracias a esta iniciativa el turismo comunitario es unestilo de vida que les permite avanzar y mostrar al mundo su talento.
+		Él mismo se describe como un narrador de historias, las cuales cuenta a travésde sus grafitis y los de sus amigos. Sabe que un graffiti no es la solución atodos los problemas de su comunidad, pero sabe que a través de estos se logra llamar la atención del gobierno, la empresa privada y la ciudadanía, parasumar acciones y lograr un impacto mayor.`,
     img: require("../static/images/protagonistas/perro.jpg"),
     socialImg: require("../static/images/protagonistas/perro.jpg"),
-    geo: { latitude: 6.255369, longitude: -75.622766 }
+    geo: {latitude: 6.255369, longitude: -75.622766}
   },
   {
     name: "aka",
+    fullName: `Luis Fernando Álvarez, Medellín, Colombia`,
     movimiento: "comuna13",
     shortText: "Sembrador y músico de Medellín",
-    text: `Un sembrador, eso es el Aka. De procesos, de semillas, de preguntas.
-      Este joven activista entiende la agricultura como un todo, un punto cero adonde todo regresa. Por eso un día está plantando con comunidades o en ejercicios de memoria colectiva, siempre desde el territorio.
-      Y otro día está haciendo canciones, porque el Aka también es hip hop. Y trabaja con jóvenes y con mayores y con todos. También es artista. Es incansable.`,
+    text: `Cofundador del movimiento Hip Hop-Agrario - AgroArte de la comuna 13,habitante del barrio San Javier.
+		Agricultor por pasión, rapero por vocación, encontró en la tierra la memoriacolectiva de su comunidad, por eso a través de procesos de siembra él y sugrupo, hablan, reviven historias y componen las letras de Hip Hop Agrario quepermiten contar las vivencias de todo un barrio.
+		Sus historias no sólo están en boca de todos, sino que están en cada acción, encada maceta, en cada planta, y sobre todo se escuchan a través de suscanciones. Para él las semillas guardan memoria, y la única forma de superarun pasado violento es hablándolo, enfrentándolo y comprometiéndose atrabajar en comunidad. A través de la ciencia, lleva a la gente de la comunaseguridad alimentaria, actualmente muchos habitantes se benefician de lashuertas ornamentales, aromáticas y medicinales.`,
     img: require("../static/images/protagonistas/aka3.jpg"),
-    geo: { latitude: 6.275369, longitude: -75.622766 }
+    geo: {latitude: 6.275369, longitude: -75.622766}
   },
   {
     name: "martika",
+    fullName: ``,
     movimiento: "comuna13",
     shortText: "Educadora social de Medellín",
     text: `Marta, Martica o Lulú: la misma persona hiperactiva y entregada a labores sociales que desde hace 10 años coordina la fundación Culturizzarte en Belencito, en Medellín. Un proyecto para encausar jóvenes en condición de vulnerabilidad desde el arte y la cultura.
@@ -31,19 +33,20 @@ const protas = [
       Es santandereana y ha vivido en muchas partes de Colombia. Sueña con crear un instituto de artes y oficios para la comuna 13.
       NO, la palabra que no figura en su diccionario personal.`,
     img: require("../static/images/protagonistas/martika.jpg"),
-    geo: { latitude: 6.225369, longitude: -75.642766 }
+    geo: {latitude: 6.225369, longitude: -75.642766}
   },
   {
-    name: "sebastián",
+    name: "sebas",
+    fullName: `Sebastián y Doña Consuelo, Medellín, Colombia`,
     movimiento: "comuna13",
     shortText: "Emprendedor de Medellín",
-    text: `25 años apenas y, sin embargo, muchos de ellos como emprendedor. Desde niño está trabajando, inventando.
-      El negocio de helados familiar, dicen, fue el primero que visitó un turista en la comuna 13. Lo que sí es un hecho es que es el que da la bienvenida a los recorridos turísticos de las escaleras mecánicas.
-      Doña Consuelo es el nombre, en honor a la abuela, la de la receta: son helados de fruta natural.
-      Como es familiar, ahí está el padre, don Jaime, el que atiende. Y el abuelo, el que compra la fruta. Sebastián se mueve de aquí para allá. Es el administrador detrás de todo, y quien resalta el valor de la terquedad.`,
+    text: `Empresario familiar, socio de las cremas más famosas de la comuna 13: lascremas de Doña Consuelo (su abuela), habitante del barrio San Javier.
+		Emprendedor por pasión y por vocación, lo lleva en la sangre, desde pequeñosiempre soñó con tener independencia económica y con ayudar a toda su
+		familia. Vio en el Graffitour de la Comuna 13 la oportunidad para sacaradelante un negocio familiar de helados.
+		Él se describe como un soñador, una persona que siempre ve oportunidades denegocio y lo más importante que las aprovecha. Ha logrado hacer del negociofamiliar una fuente de sustento y un referente para las demás familias delbarrio que como un efecto dominó empezaron a confiar en sus capacidadespara potenciar las ideas que tenían en mente, aprovechando el gran flujo deturistas que los visitan a diario.`,
     img: require("../static/images/protagonistas/cremas.jpg"),
-    geo: { latitude: 6.555369, longitude: -75.122766 }
+    geo: {latitude: 6.555369, longitude: -75.122766}
   }
-];
+]
 
-export default protas;
+export default protas
